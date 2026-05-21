@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,19 +7,19 @@
     <title>Privacy Policy – Sudoku 9</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
     <style>
         :root {
             --bg: #07071a;
             --bg2: #0d0d26;
-            --border: #1a1a40;
+            --border: #1a1a3a;
             --accent: #00d4ff;
             --accent2: #7b2fff;
             --text: #c8d8f0;
-            --text-dim: #6a80a8;
+            --text-dim: #5a70a0;
             --heading: #e8f4ff;
-            --card: rgba(255, 255, 255, 0.03);
+            --card: rgba(255, 255, 255, 0.025);
         }
 
         * {
@@ -28,51 +28,53 @@
             padding: 0;
         }
 
+        html,
+        body {
+            min-height: 100%;
+        }
+
         body {
             background: var(--bg);
             color: var(--text);
             font-family: 'Rajdhani', sans-serif;
             font-weight: 400;
-            line-height: 1.75;
+            line-height: 1.8;
             font-size: 16px;
-            min-height: 100vh;
         }
 
-        /* ── BACKGROUND GRID ── */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+                linear-gradient(rgba(0, 212, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.025) 1px, transparent 1px);
+            background-size: 48px 48px;
             pointer-events: none;
             z-index: 0;
         }
 
-        /* ── HEADER ── */
         header {
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: 60px 24px 40px;
+            padding: 52px 24px 36px;
             border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(0, 212, 255, 0.06) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.07) 0%, transparent 100%);
         }
 
         .logo-ring {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 72px;
-            height: 72px;
+            width: 76px;
+            height: 76px;
             border: 2px solid var(--accent);
             border-radius: 50%;
             margin-bottom: 20px;
-            box-shadow: 0 0 24px rgba(0, 212, 255, 0.3), inset 0 0 24px rgba(0, 212, 255, 0.05);
+            box-shadow: 0 0 32px rgba(0, 212, 255, 0.25), inset 0 0 20px rgba(0, 212, 255, 0.05);
             font-family: 'Orbitron', monospace;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 900;
             color: var(--accent);
             letter-spacing: -2px;
@@ -80,51 +82,87 @@
 
         .brand {
             font-family: 'Orbitron', monospace;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 400;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--accent);
-            opacity: 0.8;
-            margin-bottom: 8px;
+            opacity: .7;
+            margin-bottom: 10px;
         }
 
         h1 {
             font-family: 'Orbitron', monospace;
-            font-size: clamp(22px, 5vw, 36px);
+            font-size: clamp(18px, 5vw, 32px);
             font-weight: 700;
             color: var(--heading);
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .meta {
             font-size: 13px;
             color: var(--text-dim);
-            letter-spacing: 1px;
+            letter-spacing: .5px;
         }
 
-        /* ── MAIN ── */
+        .lang-bar {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-btn {
+            background: rgba(0, 212, 255, 0.04);
+            border: 1px solid rgba(0, 212, 255, 0.12);
+            border-radius: 4px;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 11px;
+            transition: all .18s;
+            white-space: nowrap;
+        }
+
+        .lang-btn:hover {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .lang-btn.active {
+            background: rgba(0, 212, 255, 0.16);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         main {
             position: relative;
             z-index: 1;
-            max-width: 820px;
+            max-width: 840px;
             margin: 0 auto;
             padding: 48px 24px 80px;
         }
 
-        /* ── SECTION ── */
-        section {
+        .pp-section {
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 28px 32px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
         }
 
-        section::before {
+        .pp-section::before {
             content: '';
             position: absolute;
             left: 0;
@@ -135,82 +173,105 @@
             border-radius: 3px 0 0 3px;
         }
 
-        h2 {
+        [dir="rtl"] .pp-section::before {
+            left: auto;
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .pp-section h2 {
             font-family: 'Orbitron', monospace;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--accent);
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        p {
-            margin-bottom: 14px;
+        .pp-section p {
+            margin-bottom: 12px;
             color: var(--text);
         }
 
-        p:last-child {
+        .pp-section p:last-child {
             margin-bottom: 0;
         }
 
-        ul {
+        .pp-section ul {
             padding-left: 20px;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
-        li {
+        [dir="rtl"] .pp-section ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        .pp-section li {
             margin-bottom: 6px;
             color: var(--text);
         }
 
-        li::marker {
+        .pp-section li::marker {
             color: var(--accent);
         }
 
-        strong {
+        .pp-section strong {
             color: var(--heading);
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        a {
+        .pp-section a {
             color: var(--accent);
             text-decoration: none;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
-            transition: border-color 0.2s;
+            border-bottom: 1px solid rgba(0, 212, 255, .3);
         }
 
-        a:hover {
+        .pp-section a:hover {
             border-color: var(--accent);
         }
 
-        /* ── BADGE ── */
-        .badge {
-            display: inline-block;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.25);
-            border-radius: 4px;
-            padding: 2px 10px;
-            font-size: 12px;
-            font-family: 'Orbitron', monospace;
-            letter-spacing: 1px;
+        .pp-section code {
+            font-size: 13px;
+            background: rgba(0, 212, 255, .08);
+            border: 1px solid rgba(0, 212, 255, .2);
+            border-radius: 3px;
+            padding: 1px 5px;
             color: var(--accent);
-            margin-bottom: 16px;
         }
 
-        /* ── CONTACT BOX ── */
+        .badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, .1);
+            border: 1px solid rgba(0, 212, 255, .25);
+            border-radius: 4px;
+            padding: 2px 12px;
+            font-size: 11px;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
         .contact-box {
             text-align: center;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.06), rgba(123, 47, 255, 0.06));
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            background: linear-gradient(135deg, rgba(0, 212, 255, .06), rgba(123, 47, 255, .06));
+            border: 1px solid rgba(0, 212, 255, .2);
             border-radius: 8px;
-            padding: 32px;
+            padding: 36px 24px;
             margin-top: 32px;
         }
 
         .contact-box h2 {
-            justify-content: center;
-            display: block;
+            font-family: 'Orbitron', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
         .contact-email {
@@ -218,23 +279,37 @@
             font-size: 15px;
             color: var(--accent);
             letter-spacing: 1px;
+            margin: 8px 0 16px;
         }
 
-        /* ── FOOTER ── */
+        .contact-sub {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .contact-sub a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        .contact-sub a:hover {
+            color: var(--accent);
+        }
+
         footer {
             position: relative;
             z-index: 1;
             text-align: center;
-            padding: 24px;
+            padding: 22px;
             border-top: 1px solid var(--border);
             font-size: 12px;
             color: var(--text-dim);
-            letter-spacing: 1px;
+            letter-spacing: .5px;
         }
 
         footer a {
             color: var(--text-dim);
-            border-bottom-color: transparent;
+            text-decoration: none;
         }
 
         footer a:hover {
@@ -248,182 +323,482 @@
     <header>
         <div class="logo-ring">S9</div>
         <div class="brand">Hexlume Games</div>
-        <h1>Privacy Policy</h1>
+        <h1 id="pp-title">Privacy Policy</h1>
         <p class="meta">Sudoku 9 &nbsp;·&nbsp; Effective Date: June 1, 2025 &nbsp;·&nbsp; Last Updated: June 1, 2025</p>
     </header>
 
-    <main>
-
-        <section>
-            <div class="badge">Overview</div>
-            <p>
-                Hexlume Games ("we", "us", or "our") built <strong>Sudoku 9</strong> as a free-to-play mobile
-                application. This Privacy Policy explains what information we collect, how we use it, and the choices
-                you have.
-            </p>
-            <p>
-                By downloading or using Sudoku 9 you agree to this policy. If you do not agree, please discontinue use
-                of the app.
-            </p>
-        </section>
-
-        <section>
-            <h2>Information We Collect</h2>
-            <p>We collect the following types of information:</p>
-            <ul>
-                <li>
-                    <strong>Device & Technical Data:</strong> Device model, operating system version, app version,
-                    language, and general location (country/region). This data is collected automatically through our
-                    advertising and analytics partners.
-                </li>
-                <li>
-                    <strong>Usage Data:</strong> In-app behavior such as sessions played, difficulty levels selected,
-                    and feature interactions — used solely to improve gameplay experience.
-                </li>
-                <li>
-                    <strong>Advertising Identifiers:</strong> With your consent, Google AdMob may collect advertising
-                    identifiers (such as the Android Advertising ID) to serve personalized advertisements.
-                </li>
-                <li>
-                    <strong>Game Progress (Local Only):</strong> Your puzzle progress, statistics, and settings are
-                    stored exclusively on your device using <code>localStorage</code>. We do not transmit this data to
-                    any server.
-                </li>
-            </ul>
-            <p>We do <strong>not</strong> collect your name, email address, phone number, precise GPS location, or any
-                other personally identifiable information directly.</p>
-        </section>
-
-        <section>
-            <h2>How We Use Information</h2>
-            <ul>
-                <li>To display advertisements through Google AdMob (banner, interstitial, and rewarded video ads).</li>
-                <li>To monitor app stability and diagnose technical issues via crash reporting.</li>
-                <li>To analyze aggregate gameplay patterns and improve future game features.</li>
-                <li>To comply with legal obligations.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Advertising & Google AdMob</h2>
-            <p>
-                Sudoku 9 uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and process
-                data in accordance with Google's own Privacy Policy and Terms of Service.
-            </p>
-            <p>
-                On first launch, you will be asked to provide or deny consent for <strong>personalized
-                    advertising</strong>. If you decline, non-personalized (contextual) ads will be shown instead. You
-                can change your preference at any time in the app's <strong>Settings → Privacy</strong> screen.
-            </p>
-            <ul>
-                <li>Google Privacy Policy: <a href="https://policies.google.com/privacy"
-                        target="_blank">policies.google.com/privacy</a></li>
-                <li>Opt-out of personalized ads: <a href="https://adssettings.google.com"
-                        target="_blank">adssettings.google.com</a></li>
-            </ul>
-            <p>
-                We do not sell your personal data to any third party.
-            </p>
-        </section>
-
-        <section>
-            <h2>Data Sharing & Third Parties</h2>
-            <p>We do not sell, trade, or rent your personal information. We may share limited, aggregated data with:</p>
-            <ul>
-                <li><strong>Google AdMob</strong> — for advertisement delivery and measurement.</li>
-                <li><strong>Legal Authorities</strong> — when required to comply with applicable law, court order, or
-                    governmental regulation.</li>
-            </ul>
-            <p>All third-party services have their own privacy policies governing the use of your data.</p>
-        </section>
-
-        <section>
-            <h2>Children's Privacy</h2>
-            <p>
-                Sudoku 9 is not directed at children under the age of <strong>13</strong> (or the applicable age of
-                digital consent in your jurisdiction). We do not knowingly collect personal information from children.
-            </p>
-            <p>
-                If you are a parent or guardian and believe your child has provided us with personal data, please
-                contact us at the address below and we will promptly delete that information.
-            </p>
-            <p>
-                The app does not use child-directed ad settings (COPPA) and is not submitted as a "Designed for
-                Families" application.
-            </p>
-        </section>
-
-        <section>
-            <h2>Data Retention & Deletion</h2>
-            <p>
-                All game data (progress, scores, settings) is stored <strong>locally on your device</strong>. You can
-                delete it at any time by uninstalling the app or clearing app data through your device's Settings.
-            </p>
-            <p>
-                Advertising identifiers and aggregated analytics data retained by our third-party partners are subject
-                to their own retention policies. You may request deletion through your device's advertising settings.
-            </p>
-        </section>
-
-        <section>
-            <h2>Your Rights (GDPR & US State Privacy)</h2>
-            <p>Depending on your location, you may have the following rights:</p>
-            <ul>
-                <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
-                <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
-                <li><strong>Deletion:</strong> Request erasure of your personal data ("right to be forgotten").</li>
-                <li><strong>Restriction:</strong> Request that we limit how we use your data.</li>
-                <li><strong>Portability:</strong> Request your data in a structured, machine-readable format.</li>
-                <li><strong>Objection:</strong> Object to processing based on legitimate interest.</li>
-                <li><strong>Withdraw Consent:</strong> Withdraw your advertising consent at any time in the app.</li>
-            </ul>
-            <p>
-                For EU/EEA users, our legal basis for processing advertising data is your <strong>explicit
-                    consent</strong> obtained through our in-app consent screen. For users in US states with applicable
-                privacy laws (California CCPA/CPRA, Virginia CDPA, Colorado CPA, etc.), you may opt out of the sale or
-                sharing of personal information at any time via the in-app consent settings.
-            </p>
-            <p>To exercise any of these rights, contact us using the information below.</p>
-        </section>
-
-        <section>
-            <h2>Security</h2>
-            <p>
-                We implement reasonable technical and organisational measures to protect the limited data we process.
-                However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot
-                guarantee absolute security.
-            </p>
-        </section>
-
-        <section>
-            <h2>Changes to This Policy</h2>
-            <p>
-                We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date
-                at the top of this page. We encourage you to review this policy periodically.
-            </p>
-            <p>
-                Continued use of Sudoku 9 after changes are posted constitutes your acceptance of the updated policy.
-            </p>
-        </section>
-
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or requests regarding this Privacy Policy, please contact:</p>
-            <p class="contact-email">hexlumegames@gmail.com</p>
-            <br />
-            <p style="font-size:13px; color: var(--text-dim);">
-                Hexlume Games &nbsp;·&nbsp; Independent Game Developer<br />
-                <a href="https://play.google.com/store/apps/developer?id=Hexlume+Games" target="_blank">Google Play
-                    Store Page</a>
-            </p>
-        </div>
-
-    </main>
+    <div class="lang-bar" id="lang-bar"></div>
+    <main id="pp-main"></main>
 
     <footer>
-        <p>© 2025 Hexlume Games · <a href="terms-of-service.html">Terms of Service</a> · Sudoku 9</p>
+        <p>© 2025 Hexlume Games &nbsp;·&nbsp;
+            <a href="terms-of-service.html">Terms of Service</a> &nbsp;·&nbsp;
+            Sudoku 9
+        </p>
     </footer>
 
+    <script>
+        /* ═══════════════════════════════════════════════
+           DATA — 22 languages × 9 sections (identical structure)
+           Sections: overview, collection, usage, advertising,
+                     sharing, children, rights, security, changes, contact
+        ═══════════════════════════════════════════════ */
+        const STORE_URL = 'https://play.google.com/store/apps/developer?id=Hexlume+Games';
+
+        const LANGS = {
+
+            /* ── ENGLISH ── */
+            en: {
+                label: "🇬🇧 English", dir: "ltr", title: "Privacy Policy",
+                overview: { badge: "Overview", text: ["Hexlume Games (\"we\", \"us\", or \"our\") built <strong>Sudoku 9</strong> as a free-to-play mobile application. This Privacy Policy explains what information we collect, how we use it, and the choices you have.", "By downloading or using Sudoku 9 you agree to this policy. If you do not agree, please discontinue use of the app."] },
+                collection: { heading: "Information We Collect", intro: "We collect the following types of information:", items: ["<strong>Device &amp; Technical Data:</strong> Device model, operating system version, app version, language, and general location (country/region). Collected automatically through our advertising and analytics partners.", "<strong>Usage Data:</strong> In-app behaviour such as sessions played, difficulty levels selected, and feature interactions — used solely to improve gameplay experience.", "<strong>Advertising Identifiers:</strong> With your consent, Google AdMob may collect advertising identifiers (such as the Android Advertising ID) to serve personalised advertisements.", "<strong>Game Progress (Local Only):</strong> Your puzzle progress, statistics, and settings are stored exclusively on your device using <code>localStorage</code>. We do not transmit this data to any server."], outro: "We do <strong>not</strong> collect your name, email address, phone number, precise GPS location, or any other personally identifiable information directly." },
+                usage: { heading: "How We Use Information", items: ["To display advertisements through Google AdMob (banner, interstitial, and rewarded video ads).", "To monitor app stability and diagnose technical issues via crash reporting.", "To analyse aggregate gameplay patterns and improve future game features.", "To comply with legal obligations."] },
+                advertising: { heading: "Advertising &amp; Google AdMob", text: ["Sudoku 9 uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and process data in accordance with Google's own Privacy Policy and Terms of Service.", "On first launch, you will be asked to provide or deny consent for <strong>personalised advertising</strong>. If you decline, non-personalised (contextual) ads will be shown instead. You can change your preference at any time in the app's <strong>Settings → Privacy</strong> screen."], links: [{ label: "Google Privacy Policy", url: "https://policies.google.com/privacy" }, { label: "Opt-out of personalised ads", url: "https://adssettings.google.com" }], noSell: "We do not sell your personal data to any third party." },
+                sharing: { heading: "Data Sharing &amp; Third Parties", intro: "We do not sell, trade, or rent your personal information. We may share limited, aggregated data with:", items: ["<strong>Google AdMob</strong> — for advertisement delivery and measurement.", "<strong>Legal Authorities</strong> — when required to comply with applicable law, court order, or governmental regulation."], note: "All third-party services have their own privacy policies governing the use of your data." },
+                children: { heading: "Children's Privacy", text: ["Sudoku 9 is not directed at children under the age of <strong>13</strong> (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children.", "If you are a parent or guardian and believe your child has provided us with personal data, please contact us at the address below and we will promptly delete that information.", "The app does not use child-directed ad settings (COPPA) and is not submitted as a 'Designed for Families' application."] },
+                rights: { heading: "Your Rights (GDPR &amp; US State Privacy)", intro: "Depending on your location, you may have the following rights:", items: ["<strong>Access:</strong> Request a copy of the personal data we hold about you.", "<strong>Correction:</strong> Request correction of inaccurate data.", "<strong>Deletion:</strong> Request erasure of your personal data (\"right to be forgotten\").", "<strong>Restriction:</strong> Request that we limit how we use your data.", "<strong>Portability:</strong> Request your data in a structured, machine-readable format.", "<strong>Objection:</strong> Object to processing based on legitimate interest.", "<strong>Withdraw Consent:</strong> Withdraw your advertising consent at any time in the app."], legal: "For EU/EEA users, our legal basis for processing advertising data is your <strong>explicit consent</strong> obtained through our in-app consent screen. For users in US states with applicable privacy laws (California CCPA/CPRA, Virginia CDPA, Colorado CPA, etc.), you may opt out of the sale or sharing of personal information at any time via the in-app consent settings. To exercise any of these rights, contact us using the information below." },
+                security: { heading: "Security", text: ["We implement reasonable technical and organisational measures to protect the limited data we process. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security."] },
+                changes: { heading: "Changes to This Policy", text: ["We may update this Privacy Policy from time to time. When we do, we will revise the \"Last Updated\" date at the top of this page. We encourage you to review this policy periodically.", "Continued use of Sudoku 9 after changes are posted constitutes your acceptance of the updated policy."] },
+                contact: { heading: "Contact Us", pre: "If you have any questions or requests regarding this Privacy Policy, please contact:", sub: "Hexlume Games &nbsp;·&nbsp; Independent Game Developer" }
+            },
+
+            /* ── TÜRKÇE (düzeltilmiş) ── */
+            tr: {
+                label: "🇹🇷 Türkçe", dir: "ltr", title: "Gizlilik Politikası",
+                overview: { badge: "Genel Bakış", text: ["Hexlume Games ('biz') olarak <strong>Sudoku 9</strong> uygulamasını ücretsiz oynanabilir bir mobil uygulama olarak geliştirdik. Bu Gizlilik Politikası; hangi bilgileri topladığımızı, bu bilgileri nasıl kullandığımızı ve sahip olduğunuz seçenekleri açıklamaktadır.", "Sudoku 9'u indirerek veya kullanarak bu politikayı kabul etmiş olursunuz. Kabul etmiyorsanız lütfen uygulamayı kullanmayı bırakın."] },
+                collection: { heading: "Topladığımız Bilgiler", intro: "Aşağıdaki türde bilgileri topluyoruz:", items: ["<strong>Cihaz ve Teknik Veriler:</strong> Cihaz modeli, işletim sistemi sürümü, uygulama sürümü, dil ve genel konum (ülke/bölge). Reklam ve analiz ortaklarımız aracılığıyla otomatik olarak toplanır.", "<strong>Kullanım Verileri:</strong> Oynanan oyun sayısı, seçilen zorluk seviyeleri ve özellik etkileşimleri gibi uygulama içi davranışlar — yalnızca oyun deneyimini iyileştirmek amacıyla kullanılır.", "<strong>Reklam Tanımlayıcıları:</strong> Onayınız dahilinde Google AdMob, kişiselleştirilmiş reklamlar sunmak için reklam tanımlayıcılarını (Android Reklam Kimliği gibi) toplayabilir.", "<strong>Oyun İlerlemesi (Yalnızca Yerel):</strong> Bulmaca ilerlemeniz, istatistikleriniz ve ayarlarınız yalnızca cihazınızda <code>localStorage</code> kullanılarak saklanır. Bu verileri herhangi bir sunucuya iletmiyoruz."], outro: "Adınız, e-posta adresiniz, telefon numaranız, kesin GPS konumunuz veya doğrudan sizi tanımlayabilecek başka hiçbir kişisel bilgi <strong>toplanmamaktadır</strong>." },
+                usage: { heading: "Bilgileri Nasıl Kullanıyoruz", items: ["Google AdMob aracılığıyla reklam göstermek (banner, geçiş reklamı ve ödüllü video reklamları).", "Uygulama kararlılığını izlemek ve teknik sorunları çökme raporlarıyla teşhis etmek.", "Toplu oyun kalıplarını analiz etmek ve gelecekteki oyun özelliklerini geliştirmek.", "Yasal yükümlülüklere uymak."] },
+                advertising: { heading: "Reklamlar ve Google AdMob", text: ["Sudoku 9, reklam göstermek için <strong>Google AdMob</strong> kullanmaktadır. AdMob, Google'ın kendi Gizlilik Politikası ve Hizmet Koşulları doğrultusunda veri toplayıp işleyebilir.", "İlk açılışta <strong>kişiselleştirilmiş reklamlara</strong> onay vermeniz veya reddetmeniz istenecektir. Reddederseniz bunun yerine kişiselleştirilmemiş (bağlamsal) reklamlar gösterilir. Tercihini istediğiniz zaman uygulamanın <strong>Ayarlar → Gizlilik</strong> ekranından değiştirebilirsiniz."], links: [{ label: "Google Gizlilik Politikası", url: "https://policies.google.com/privacy" }, { label: "Kişiselleştirilmiş reklamları devre dışı bırak", url: "https://adssettings.google.com" }], noSell: "Kişisel verilerinizi hiçbir üçüncü tarafa satmıyoruz." },
+                sharing: { heading: "Veri Paylaşımı ve Üçüncü Taraflar", intro: "Kişisel bilgilerinizi satmıyor, takas etmiyor veya kiralamıyoruz. Sınırlı, anonimleştirilmiş veriler yalnızca şunlarla paylaşılabilir:", items: ["<strong>Google AdMob</strong> — reklam sunumu ve ölçümü için.", "<strong>Yasal Makamlar</strong> — yürürlükteki yasa, mahkeme kararı veya hükümet düzenlemesine uymak için gerekli olduğunda."], note: "Tüm üçüncü taraf hizmetlerin verilerinizin kullanımını düzenleyen kendi gizlilik politikaları bulunmaktadır." },
+                children: { heading: "Çocukların Gizliliği", text: ["Sudoku 9, <strong>13</strong> yaşın altındaki çocuklara yönelik değildir. Çocuklardan bilerek kişisel bilgi toplamıyoruz.", "Bir ebeveyn veya vasi olarak çocuğunuzun bize kişisel veri sağladığına inanıyorsanız lütfen aşağıdaki adresten bizimle iletişime geçin; bu bilgileri derhal sileceğiz.", "Uygulama, çocuklara yönelik reklam ayarları (COPPA) kullanmamakta ve 'Aileler için Tasarlanmış' başvurusu kapsamında sunulmamaktadır."] },
+                rights: { heading: "Haklarınız (GDPR ve ABD Eyalet Gizliliği)", intro: "Konumunuza bağlı olarak aşağıdaki haklara sahip olabilirsiniz:", items: ["<strong>Erişim:</strong> Hakkınızda tuttuğumuz kişisel verilerin bir kopyasını talep etme.", "<strong>Düzeltme:</strong> Hatalı verilerin düzeltilmesini talep etme.", "<strong>Silme:</strong> Kişisel verilerinizin silinmesini talep etme ('unutulma hakkı').", "<strong>Kısıtlama:</strong> Verilerinizi nasıl kullandığımızı sınırlamamızı talep etme.", "<strong>Taşınabilirlik:</strong> Verilerinizi yapılandırılmış, makine tarafından okunabilir biçimde talep etme.", "<strong>İtiraz:</strong> Meşru menfaate dayalı işlemeye itiraz etme.", "<strong>Rızayı Geri Çekme:</strong> Reklam onayınızı istediğiniz zaman uygulama içinden geri çekme."], legal: "AB/AEA kullanıcıları için reklam verilerinin işlenmesinin hukuki dayanağı, uygulama içi onay ekranımız aracılığıyla alınan <strong>açık rızanızdır</strong>. Geçerli gizlilik yasalarına sahip ABD eyaletlerindeki kullanıcılar (California CCPA/CPRA, Virginia CDPA, Colorado CPA vb.) uygulama içi onay ayarları üzerinden kişisel bilgilerin satışına veya paylaşımına istedikleri zaman itiraz edebilir. Bu haklardan herhangi birini kullanmak için aşağıdaki iletişim bilgilerini kullanın." },
+                security: { heading: "Güvenlik", text: ["İşlediğimiz sınırlı verileri korumak için makul teknik ve organizasyonel tedbirler uyguluyoruz. Ancak internet üzerinden iletim veya elektronik depolama yöntemi %100 güvenli değildir ve mutlak güvenliği garanti edemeyiz."] },
+                changes: { heading: "Bu Politikadaki Değişiklikler", text: ["Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Güncelleme yaptığımızda bu sayfanın üst kısmındaki 'Son Güncelleme' tarihini revize edeceğiz. Bu politikayı periyodik olarak incelemenizi öneririz.", "Değişiklikler yayınlandıktan sonra Sudoku 9'u kullanmaya devam etmek, güncellenmiş politikayı kabul ettiğiniz anlamına gelir."] },
+                contact: { heading: "Bize Ulaşın", pre: "Bu Gizlilik Politikası hakkında sorularınız veya talepleriniz için lütfen iletişime geçin:", sub: "Hexlume Games &nbsp;·&nbsp; Bağımsız Oyun Geliştirici" }
+            },
+
+            /* ── DEUTSCH (düzeltilmiş) ── */
+            de: {
+                label: "🇩🇪 Deutsch", dir: "ltr", title: "Datenschutzerklärung",
+                overview: { badge: "Überblick", text: ["Hexlume Games („wir\") hat <strong>Sudoku 9</strong> als kostenlos spielbare mobile Anwendung entwickelt. Diese Datenschutzerklärung erläutert, welche Informationen wir erheben, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben.", "Durch das Herunterladen oder die Nutzung von Sudoku 9 stimmen Sie dieser Richtlinie zu. Wenn Sie nicht zustimmen, stellen Sie bitte die Nutzung der App ein."] },
+                collection: { heading: "Erhobene Informationen", intro: "Wir erheben folgende Arten von Informationen:", items: ["<strong>Geräte- und technische Daten:</strong> Gerätemodell, Betriebssystemversion, App-Version, Sprache und allgemeiner Standort (Land/Region). Automatisch über unsere Werbe- und Analysepartner erhoben.", "<strong>Nutzungsdaten:</strong> In-App-Verhalten wie gespielte Sitzungen, ausgewählte Schwierigkeitsgrade und Funktionsinteraktionen — ausschließlich zur Verbesserung des Spielerlebnisses.", "<strong>Werbekennungen:</strong> Mit Ihrer Einwilligung kann Google AdMob Werbekennungen (wie die Android-Werbe-ID) erheben, um personalisierte Werbung zu schalten.", "<strong>Spielfortschritt (nur lokal):</strong> Ihr Rätselfortschritt, Statistiken und Einstellungen werden ausschließlich auf Ihrem Gerät per <code>localStorage</code> gespeichert. Wir übermitteln diese Daten an keinen Server."], outro: "Wir erheben <strong>nicht</strong> Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, genauen GPS-Standort oder andere direkt identifizierbare Informationen." },
+                usage: { heading: "Verwendung der Informationen", items: ["Anzeige von Werbung über Google AdMob (Banner-, Interstitial- und Rewarded-Video-Anzeigen).", "Überwachung der App-Stabilität und Diagnose technischer Probleme per Absturzberichten.", "Analyse aggregierter Spielmuster zur Verbesserung künftiger Spielfunktionen.", "Einhaltung gesetzlicher Verpflichtungen."] },
+                advertising: { heading: "Werbung &amp; Google AdMob", text: ["Sudoku 9 verwendet <strong>Google AdMob</strong> zur Werbeanzeige. AdMob kann Daten gemäß Googles eigener Datenschutzrichtlinie und Nutzungsbedingungen erheben und verarbeiten.", "Beim ersten Start werden Sie um Einwilligung oder Ablehnung für <strong>personalisierte Werbung</strong> gebeten. Bei Ablehnung werden stattdessen nicht personalisierte (kontextbezogene) Anzeigen gezeigt. Sie können Ihre Präferenz jederzeit unter <strong>Einstellungen → Datenschutz</strong> in der App ändern."], links: [{ label: "Google Datenschutzrichtlinie", url: "https://policies.google.com/privacy" }, { label: "Personalisierte Werbung deaktivieren", url: "https://adssettings.google.com" }], noSell: "Wir verkaufen Ihre personenbezogenen Daten nicht an Dritte." },
+                sharing: { heading: "Datenweitergabe &amp; Dritte", intro: "Wir verkaufen, tauschen oder vermieten Ihre persönlichen Daten nicht. Begrenzte aggregierte Daten können geteilt werden mit:", items: ["<strong>Google AdMob</strong> — für Anzeigenauslieferung und -messung.", "<strong>Behörden</strong> — wenn dies zur Einhaltung geltender Gesetze, Gerichtsbeschlüsse oder behördlicher Vorschriften erforderlich ist."], note: "Alle Drittanbieter-Dienste haben eigene Datenschutzrichtlinien, die die Verwendung Ihrer Daten regeln." },
+                children: { heading: "Datenschutz für Kinder", text: ["Sudoku 9 richtet sich nicht an Kinder unter <strong>13 Jahren</strong>. Wir erheben wissentlich keine personenbezogenen Daten von Kindern.", "Wenn Sie Elternteil oder Erziehungsberechtigter sind und glauben, dass Ihr Kind uns Daten bereitgestellt hat, kontaktieren Sie uns bitte unter der unten stehenden Adresse — wir werden diese Daten umgehend löschen.", "Die App verwendet keine kindgerichteten Werbeeinstellungen (COPPA) und wurde nicht als „Für Familien konzipiert\" eingereicht."] },
+                rights: { heading: "Ihre Rechte (DSGVO &amp; US-Datenschutz)", intro: "Je nach Ihrem Wohnort haben Sie möglicherweise folgende Rechte:", items: ["<strong>Auskunft:</strong> Kopie der über Sie gespeicherten personenbezogenen Daten anfordern.", "<strong>Berichtigung:</strong> Korrektur unrichtiger Daten verlangen.", "<strong>Löschung:</strong> Löschung Ihrer personenbezogenen Daten verlangen.", "<strong>Einschränkung:</strong> Einschränkung der Verarbeitung verlangen.", "<strong>Datenübertragbarkeit:</strong> Daten in maschinenlesbarem Format anfordern.", "<strong>Widerspruch:</strong> Der Verarbeitung auf Grundlage berechtigter Interessen widersprechen.", "<strong>Einwilligung widerrufen:</strong> Werbeeinwilligung jederzeit in der App widerrufen."], legal: "Für EU/EWR-Nutzer ist unsere Rechtsgrundlage für die Verarbeitung von Werbedaten Ihre <strong>ausdrückliche Einwilligung</strong>, die über unseren In-App-Einwilligungsbildschirm eingeholt wird. Nutzer in US-Bundesstaaten mit geltenden Datenschutzgesetzen (CCPA/CPRA, CDPA, CPA usw.) können der Weitergabe personenbezogener Daten jederzeit über die In-App-Einstellungen widersprechen. Wenden Sie sich für die Ausübung dieser Rechte an die unten angegebene Adresse." },
+                security: { heading: "Sicherheit", text: ["Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz der von uns verarbeiteten Daten. Keine Übertragungsmethode über das Internet oder elektronische Speicherung ist jedoch zu 100 % sicher; wir können keine absolute Sicherheit garantieren."] },
+                changes: { heading: "Änderungen dieser Richtlinie", text: ["Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. In diesem Fall werden wir das Datum „Letzte Aktualisierung\" oben auf dieser Seite anpassen. Wir empfehlen Ihnen, diese Richtlinie regelmäßig zu überprüfen.", "Die fortgesetzte Nutzung von Sudoku 9 nach Änderungen gilt als Zustimmung zur aktualisierten Richtlinie."] },
+                contact: { heading: "Kontakt", pre: "Bei Fragen oder Anfragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte:", sub: "Hexlume Games &nbsp;·&nbsp; Unabhängiger Spieleentwickler" }
+            },
+
+            /* ── FRANÇAIS ── */
+            fr: {
+                label: "🇫🇷 Français", dir: "ltr", title: "Politique de Confidentialité",
+                overview: { badge: "Aperçu", text: ["Hexlume Games (« nous ») a développé <strong>Sudoku 9</strong> en tant qu'application mobile gratuite. Cette Politique de confidentialité explique quelles informations nous collectons, comment nous les utilisons et les choix dont vous disposez.", "En téléchargeant ou en utilisant Sudoku 9, vous acceptez cette politique. Si vous n'êtes pas d'accord, veuillez cesser d'utiliser l'application."] },
+                collection: { heading: "Informations Collectées", intro: "Nous collectons les types d'informations suivants :", items: ["<strong>Données techniques :</strong> Modèle d'appareil, version du système d'exploitation, version de l'application, langue et localisation générale (pays/région). Collectées automatiquement via nos partenaires publicitaires et analytiques.", "<strong>Données d'utilisation :</strong> Comportement dans l'application (sessions jouées, niveaux de difficulté sélectionnés, interactions) — uniquement pour améliorer l'expérience de jeu.", "<strong>Identifiants publicitaires :</strong> Avec votre consentement, Google AdMob peut collecter des identifiants publicitaires pour diffuser des annonces personnalisées.", "<strong>Progression (locale uniquement) :</strong> Vos progrès, statistiques et paramètres sont stockés uniquement sur votre appareil via <code>localStorage</code>. Nous ne transmettons pas ces données à un serveur."], outro: "Nous ne collectons <strong>pas</strong> votre nom, adresse e-mail, numéro de téléphone, position GPS précise ou toute autre information personnellement identifiable." },
+                usage: { heading: "Utilisation des Informations", items: ["Afficher des publicités via Google AdMob (bannières, interstitiels, vidéos récompensées).", "Surveiller la stabilité de l'application et diagnostiquer les problèmes techniques.", "Analyser les habitudes de jeu agrégées pour améliorer les fonctionnalités futures.", "Respecter les obligations légales."] },
+                advertising: { heading: "Publicité &amp; Google AdMob", text: ["Sudoku 9 utilise <strong>Google AdMob</strong> pour afficher des publicités. AdMob peut collecter et traiter des données conformément à la propre politique de confidentialité et aux conditions d'utilisation de Google.", "Lors du premier lancement, vous serez invité à consentir ou à refuser la <strong>publicité personnalisée</strong>. En cas de refus, des annonces non personnalisées (contextuelles) seront affichées. Vous pouvez modifier votre préférence à tout moment dans <strong>Paramètres → Confidentialité</strong>."], links: [{ label: "Politique de confidentialité Google", url: "https://policies.google.com/privacy" }, { label: "Désactiver les annonces personnalisées", url: "https://adssettings.google.com" }], noSell: "Nous ne vendons pas vos données personnelles à des tiers." },
+                sharing: { heading: "Partage de Données &amp; Tiers", intro: "Nous ne vendons, n'échangeons ni ne louons vos informations personnelles. Des données agrégées limitées peuvent être partagées avec :", items: ["<strong>Google AdMob</strong> — pour la diffusion et la mesure des publicités.", "<strong>Autorités légales</strong> — lorsque requis par la loi applicable, une ordonnance judiciaire ou une réglementation gouvernementale."], note: "Tous les services tiers ont leur propre politique de confidentialité régissant l'utilisation de vos données." },
+                children: { heading: "Confidentialité des Enfants", text: ["Sudoku 9 n'est pas destiné aux enfants de moins de <strong>13 ans</strong>. Nous ne collectons pas sciemment d'informations personnelles auprès des enfants.", "Si vous êtes parent ou tuteur et pensez que votre enfant nous a fourni des données personnelles, veuillez nous contacter à l'adresse ci-dessous et nous supprimerons rapidement ces informations.", "L'application n'utilise pas les paramètres publicitaires destinés aux enfants (COPPA) et n'est pas soumise en tant qu'application « Conçue pour les familles »."] },
+                rights: { heading: "Vos Droits (RGPD &amp; Confidentialité US)", intro: "Selon votre localisation, vous pouvez avoir les droits suivants :", items: ["<strong>Accès :</strong> Demander une copie des données personnelles que nous détenons.", "<strong>Rectification :</strong> Demander la correction de données inexactes.", "<strong>Suppression :</strong> Demander l'effacement de vos données personnelles.", "<strong>Limitation :</strong> Demander la limitation de l'utilisation de vos données.", "<strong>Portabilité :</strong> Recevoir vos données dans un format structuré et lisible par machine.", "<strong>Opposition :</strong> S'opposer au traitement fondé sur un intérêt légitime.", "<strong>Retrait du consentement :</strong> Retirer votre consentement publicitaire à tout moment dans l'application."], legal: "Pour les utilisateurs UE/EEE, notre base légale pour le traitement des données publicitaires est votre <strong>consentement explicite</strong> obtenu via notre écran de consentement intégré. Pour les utilisateurs des États américains concernés (CCPA/CPRA, CDPA, CPA, etc.), vous pouvez vous opposer à tout moment via les paramètres de consentement de l'application. Contactez-nous pour exercer ces droits." },
+                security: { heading: "Sécurité", text: ["Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger les données limitées que nous traitons. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est sécurisée à 100 %, et nous ne pouvons garantir une sécurité absolue."] },
+                changes: { heading: "Modifications de Cette Politique", text: ["Nous pouvons mettre à jour cette Politique de confidentialité périodiquement. La date de « Dernière mise à jour » sera révisée en conséquence. Nous vous encourageons à consulter régulièrement cette politique.", "L'utilisation continue de Sudoku 9 après la publication de modifications constitue votre acceptation de la politique mise à jour."] },
+                contact: { heading: "Nous Contacter", pre: "Pour toute question ou demande concernant cette Politique de confidentialité, veuillez contacter :", sub: "Hexlume Games &nbsp;·&nbsp; Développeur de jeux indépendant" }
+            },
+
+            /* ── ESPAÑOL ── */
+            es: {
+                label: "🇪🇸 Español", dir: "ltr", title: "Política de Privacidad",
+                overview: { badge: "Descripción General", text: ["Hexlume Games («nosotros») desarrolló <strong>Sudoku 9</strong> como una aplicación móvil gratuita. Esta Política de privacidad explica qué información recopilamos, cómo la usamos y las opciones disponibles.", "Al descargar o usar Sudoku 9, aceptas esta política. Si no estás de acuerdo, deja de usar la aplicación."] },
+                collection: { heading: "Información que Recopilamos", intro: "Recopilamos los siguientes tipos de información:", items: ["<strong>Datos del dispositivo y técnicos:</strong> Modelo, versión del SO, versión de la app, idioma y ubicación general (país/región). Recopilados automáticamente a través de nuestros socios publicitarios y de análisis.", "<strong>Datos de uso:</strong> Sesiones jugadas, niveles de dificultad seleccionados e interacciones con funciones — solo para mejorar la experiencia de juego.", "<strong>Identificadores publicitarios:</strong> Con tu consentimiento, Google AdMob puede recopilar identificadores publicitarios para mostrar anuncios personalizados.", "<strong>Progreso del juego (solo local):</strong> Tu progreso, estadísticas y configuración se almacenan exclusivamente en tu dispositivo mediante <code>localStorage</code>. No transmitimos estos datos a ningún servidor."], outro: "<strong>No</strong> recopilamos tu nombre, correo electrónico, número de teléfono, ubicación GPS precisa ni ninguna otra información de identificación personal directamente." },
+                usage: { heading: "Uso de la Información", items: ["Mostrar publicidad a través de Google AdMob (banners, interstitials y videos recompensados).", "Supervisar la estabilidad de la app y diagnosticar problemas técnicos.", "Analizar patrones de juego agregados para mejorar funciones futuras.", "Cumplir con obligaciones legales."] },
+                advertising: { heading: "Publicidad &amp; Google AdMob", text: ["Sudoku 9 usa <strong>Google AdMob</strong> para mostrar publicidad. AdMob puede recopilar y procesar datos según su propia Política de privacidad y Condiciones del servicio.", "En el primer inicio se te solicitará consentimiento o rechazo para la <strong>publicidad personalizada</strong>. Si rechazas, se mostrarán anuncios no personalizados. Puedes cambiar tu preferencia en cualquier momento en <strong>Ajustes → Privacidad</strong>."], links: [{ label: "Política de privacidad de Google", url: "https://policies.google.com/privacy" }, { label: "Desactivar anuncios personalizados", url: "https://adssettings.google.com" }], noSell: "No vendemos tus datos personales a terceros." },
+                sharing: { heading: "Compartir Datos y Terceros", intro: "No vendemos, intercambiamos ni alquilamos tu información personal. Datos agregados limitados pueden compartirse con:", items: ["<strong>Google AdMob</strong> — para entrega y medición de anuncios.", "<strong>Autoridades legales</strong> — cuando sea necesario para cumplir con la ley aplicable, una orden judicial o regulación gubernamental."], note: "Todos los servicios de terceros tienen sus propias políticas de privacidad que rigen el uso de tus datos." },
+                children: { heading: "Privacidad de los Menores", text: ["Sudoku 9 no está dirigido a menores de <strong>13 años</strong>. No recopilamos intencionalmente información personal de niños.", "Si eres padre, madre o tutor y crees que tu hijo nos ha proporcionado datos personales, contáctanos en la dirección de abajo y eliminaremos esa información de inmediato.", "La app no usa configuraciones de anuncios dirigidos a niños (COPPA) y no se ha enviado como aplicación «Diseñada para familias»."] },
+                rights: { heading: "Tus Derechos (RGPD &amp; Privacidad en EE. UU.)", intro: "Dependiendo de tu ubicación, puedes tener los siguientes derechos:", items: ["<strong>Acceso:</strong> Solicitar una copia de los datos personales que tenemos sobre ti.", "<strong>Rectificación:</strong> Solicitar la corrección de datos inexactos.", "<strong>Supresión:</strong> Solicitar la eliminación de tus datos personales.", "<strong>Limitación:</strong> Solicitar que limitemos cómo usamos tus datos.", "<strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado y legible por máquina.", "<strong>Oposición:</strong> Oponerte al procesamiento basado en interés legítimo.", "<strong>Retirar el consentimiento:</strong> Retirar tu consentimiento publicitario en cualquier momento desde la app."], legal: "Para usuarios de la UE/EEE, nuestra base legal es tu <strong>consentimiento explícito</strong> obtenido a través de la pantalla de consentimiento en la app. Para usuarios de estados de EE. UU. con leyes de privacidad aplicables (CCPA/CPRA, CDPA, CPA, etc.), puedes oponerte a la venta o compartición de datos en cualquier momento. Contáctanos para ejercer estos derechos." },
+                security: { heading: "Seguridad", text: ["Implementamos medidas técnicas y organizativas razonables para proteger los datos limitados que procesamos. Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro, y no podemos garantizar seguridad absoluta."] },
+                changes: { heading: "Cambios en Esta Política", text: ["Podemos actualizar esta Política de privacidad periódicamente. Revisaremos la fecha de «Última actualización» correspondiente. Te recomendamos revisarla periódicamente.", "El uso continuado de Sudoku 9 tras la publicación de cambios constituye tu aceptación de la política actualizada."] },
+                contact: { heading: "Contáctanos", pre: "Para cualquier pregunta o solicitud sobre esta Política de privacidad:", sub: "Hexlume Games &nbsp;·&nbsp; Desarrollador independiente de juegos" }
+            },
+
+            /* ── ITALIANO ── */
+            it: {
+                label: "🇮🇹 Italiano", dir: "ltr", title: "Informativa sulla Privacy",
+                overview: { badge: "Panoramica", text: ["Hexlume Games (\"noi\") ha sviluppato <strong>Sudoku 9</strong> come applicazione mobile gratuita. Questa Informativa sulla privacy spiega quali informazioni raccogliamo, come le utilizziamo e le scelte a tua disposizione.", "Scaricando o usando Sudoku 9, accetti questa informativa. Se non sei d'accordo, ti preghiamo di smettere di usare l'app."] },
+                collection: { heading: "Informazioni Raccolte", intro: "Raccogliamo i seguenti tipi di informazioni:", items: ["<strong>Dati tecnici del dispositivo:</strong> Modello, versione del sistema operativo, versione dell'app, lingua e posizione generale (paese/regione). Raccolti automaticamente tramite i nostri partner pubblicitari e analitici.", "<strong>Dati di utilizzo:</strong> Sessioni giocate, livelli di difficoltà selezionati e interazioni con le funzionalità — solo per migliorare l'esperienza di gioco.", "<strong>Identificatori pubblicitari:</strong> Con il tuo consenso, Google AdMob può raccogliere identificatori pubblicitari per mostrare annunci personalizzati.", "<strong>Progressi di gioco (solo locali):</strong> I tuoi progressi, statistiche e impostazioni sono archiviati solo sul tuo dispositivo tramite <code>localStorage</code>. Non trasmettiamo questi dati ad alcun server."], outro: "<strong>Non</strong> raccogliamo nome, e-mail, numero di telefono, posizione GPS precisa o altre informazioni identificabili direttamente." },
+                usage: { heading: "Come Utilizziamo le Informazioni", items: ["Mostrare pubblicità tramite Google AdMob (banner, interstitial e video premiati).", "Monitorare la stabilità dell'app e diagnosticare problemi tecnici.", "Analizzare i modelli di gioco aggregati per migliorare le funzionalità future.", "Rispettare gli obblighi legali."] },
+                advertising: { heading: "Pubblicità &amp; Google AdMob", text: ["Sudoku 9 utilizza <strong>Google AdMob</strong> per visualizzare annunci. AdMob può raccogliere ed elaborare dati in conformità con la propria Privacy Policy e Termini di servizio.", "Al primo avvio ti verrà chiesto di fornire o negare il consenso per la <strong>pubblicità personalizzata</strong>. In caso di rifiuto, verranno mostrati annunci non personalizzati. Puoi modificare la tua preferenza in qualsiasi momento in <strong>Impostazioni → Privacy</strong>."], links: [{ label: "Privacy Policy di Google", url: "https://policies.google.com/privacy" }, { label: "Disattiva annunci personalizzati", url: "https://adssettings.google.com" }], noSell: "Non vendiamo i tuoi dati personali a terzi." },
+                sharing: { heading: "Condivisione Dati e Terze Parti", intro: "Non vendiamo, scambiamo né affittiamo le tue informazioni personali. Dati aggregati limitati possono essere condivisi con:", items: ["<strong>Google AdMob</strong> — per la consegna e la misurazione degli annunci.", "<strong>Autorità legali</strong> — quando richiesto dalla legge applicabile, da un'ordinanza del tribunale o da una normativa governativa."], note: "Tutti i servizi di terze parti hanno le proprie politiche sulla privacy che regolano l'uso dei tuoi dati." },
+                children: { heading: "Privacy dei Minori", text: ["Sudoku 9 non è rivolto a bambini di età inferiore a <strong>13 anni</strong>. Non raccogliamo consapevolmente dati personali di minori.", "Se sei genitore o tutore e ritieni che tuo figlio ci abbia fornito dati personali, contattaci all'indirizzo sottostante e provvederemo alla cancellazione immediata.", "L'app non utilizza impostazioni pubblicitarie per bambini (COPPA) e non è stata presentata come applicazione 'Progettata per le famiglie'."] },
+                rights: { heading: "I Tuoi Diritti (GDPR &amp; Privacy USA)", intro: "A seconda della tua posizione, potresti avere i seguenti diritti:", items: ["<strong>Accesso:</strong> Richiedere una copia dei dati personali che deteniamo su di te.", "<strong>Rettifica:</strong> Richiedere la correzione di dati inesatti.", "<strong>Cancellazione:</strong> Richiedere la cancellazione dei tuoi dati personali.", "<strong>Limitazione:</strong> Richiedere che limitiamo l'uso dei tuoi dati.", "<strong>Portabilità:</strong> Ricevere i tuoi dati in un formato strutturato e leggibile da macchina.", "<strong>Opposizione:</strong> Opporti al trattamento basato su legittimo interesse.", "<strong>Revoca del consenso:</strong> Revocare il tuo consenso pubblicitario in qualsiasi momento dall'app."], legal: "Per gli utenti UE/SEE, la base giuridica per il trattamento dei dati pubblicitari è il tuo <strong>consenso esplicito</strong> ottenuto tramite la nostra schermata di consenso in-app. Per gli utenti negli stati USA con leggi sulla privacy applicabili (CCPA/CPRA, CDPA, CPA, ecc.), puoi rifiutare in qualsiasi momento tramite le impostazioni di consenso dell'app. Contattaci per esercitare questi diritti." },
+                security: { heading: "Sicurezza", text: ["Implementiamo misure tecniche e organizzative ragionevoli per proteggere i dati limitati che trattiamo. Tuttavia, nessun metodo di trasmissione su Internet o di archiviazione elettronica è sicuro al 100%, e non possiamo garantire la sicurezza assoluta."] },
+                changes: { heading: "Modifiche a Questa Informativa", text: ["Potremmo aggiornare periodicamente questa Informativa sulla privacy. In tal caso, aggiorneremo la data dell'«Ultimo aggiornamento» in cima a questa pagina. Ti incoraggiamo a riesaminarla periodicamente.", "L'uso continuato di Sudoku 9 dopo la pubblicazione delle modifiche costituisce accettazione dell'informativa aggiornata."] },
+                contact: { heading: "Contattaci", pre: "Per qualsiasi domanda o richiesta relativa a questa Informativa sulla privacy, contatta:", sub: "Hexlume Games &nbsp;·&nbsp; Sviluppatore di giochi indipendente" }
+            },
+
+            /* ── PORTUGUÊS ── */
+            pt: {
+                label: "🇵🇹 Português", dir: "ltr", title: "Política de Privacidade",
+                overview: { badge: "Visão Geral", text: ["A Hexlume Games (\"nós\") desenvolveu o <strong>Sudoku 9</strong> como um aplicativo móvel gratuito. Esta Política de Privacidade explica quais informações coletamos, como as usamos e as opções disponíveis.", "Ao baixar ou usar o Sudoku 9, você concorda com esta política. Se não concordar, pare de usar o aplicativo."] },
+                collection: { heading: "Informações Coletadas", intro: "Coletamos os seguintes tipos de informações:", items: ["<strong>Dados técnicos do dispositivo:</strong> Modelo, versão do SO, versão do app, idioma e localização geral (país/região). Coletados automaticamente por nossos parceiros de publicidade e análise.", "<strong>Dados de uso:</strong> Sessões jogadas, níveis de dificuldade selecionados e interações com recursos — apenas para melhorar a experiência de jogo.", "<strong>Identificadores de publicidade:</strong> Com seu consentimento, o Google AdMob pode coletar identificadores publicitários para veicular anúncios personalizados.", "<strong>Progresso do jogo (somente local):</strong> Seu progresso, estatísticas e configurações são armazenados apenas no seu dispositivo via <code>localStorage</code>. Não transmitimos esses dados a nenhum servidor."], outro: "<strong>Não</strong> coletamos nome, e-mail, telefone, localização GPS precisa ou qualquer outra informação de identificação pessoal diretamente." },
+                usage: { heading: "Como Usamos as Informações", items: ["Exibir publicidade via Google AdMob (banners, interstitials e vídeos recompensados).", "Monitorar a estabilidade do app e diagnosticar problemas técnicos.", "Analisar padrões de jogo agregados para melhorar recursos futuros.", "Cumprir obrigações legais."] },
+                advertising: { heading: "Publicidade &amp; Google AdMob", text: ["O Sudoku 9 usa o <strong>Google AdMob</strong> para exibir anúncios. O AdMob pode coletar e processar dados de acordo com sua própria Política de Privacidade e Termos de Serviço.", "No primeiro acesso, você será solicitado a consentir ou recusar a <strong>publicidade personalizada</strong>. Se recusar, serão exibidos anúncios não personalizados. Você pode alterar sua preferência a qualquer momento em <strong>Configurações → Privacidade</strong>."], links: [{ label: "Política de Privacidade do Google", url: "https://policies.google.com/privacy" }, { label: "Desativar anúncios personalizados", url: "https://adssettings.google.com" }], noSell: "Não vendemos seus dados pessoais a terceiros." },
+                sharing: { heading: "Compartilhamento de Dados e Terceiros", intro: "Não vendemos, trocamos nem alugamos suas informações pessoais. Dados agregados limitados podem ser compartilhados com:", items: ["<strong>Google AdMob</strong> — para entrega e mensuração de anúncios.", "<strong>Autoridades legais</strong> — quando necessário para cumprir a lei aplicável, ordem judicial ou regulamentação governamental."], note: "Todos os serviços de terceiros possuem suas próprias políticas de privacidade que regem o uso de seus dados." },
+                children: { heading: "Privacidade de Crianças", text: ["O Sudoku 9 não é direcionado a crianças menores de <strong>13 anos</strong>. Não coletamos intencionalmente informações pessoais de crianças.", "Se você é pai, mãe ou responsável e acredita que seu filho nos forneceu dados pessoais, entre em contato pelo endereço abaixo e excluiremos essas informações imediatamente.", "O app não usa configurações de anúncios para crianças (COPPA) e não foi submetido como aplicativo 'Desenvolvido para famílias'."] },
+                rights: { heading: "Seus Direitos (LGPD / GDPR &amp; EUA)", intro: "Dependendo da sua localização, você pode ter os seguintes direitos:", items: ["<strong>Acesso:</strong> Solicitar uma cópia dos dados pessoais que mantemos sobre você.", "<strong>Correção:</strong> Solicitar a correção de dados incorretos.", "<strong>Exclusão:</strong> Solicitar a exclusão dos seus dados pessoais.", "<strong>Restrição:</strong> Solicitar que limitemos como usamos seus dados.", "<strong>Portabilidade:</strong> Receber seus dados em formato estruturado e legível por máquina.", "<strong>Objeção:</strong> Objetar ao processamento baseado em interesse legítimo.", "<strong>Retirar o Consentimento:</strong> Retirar seu consentimento publicitário a qualquer momento no app."], legal: "Para usuários da UE/EEE, nossa base legal é o seu <strong>consentimento explícito</strong> obtido pela tela de consentimento no app. Para usuários de estados dos EUA com leis de privacidade aplicáveis (CCPA/CPRA, CDPA, CPA, etc.), você pode optar por não ter seus dados vendidos ou compartilhados a qualquer momento pelas configurações do app. Entre em contato para exercer esses direitos." },
+                security: { heading: "Segurança", text: ["Implementamos medidas técnicas e organizacionais razoáveis para proteger os dados limitados que processamos. No entanto, nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100% seguro, e não podemos garantir segurança absoluta."] },
+                changes: { heading: "Alterações nesta Política", text: ["Podemos atualizar esta Política de Privacidade periodicamente. A data da 'Última atualização' será revisada. Recomendamos verificá-la periodicamente.", "O uso contínuo do Sudoku 9 após a publicação das alterações constitui sua aceitação da política atualizada."] },
+                contact: { heading: "Contate-nos", pre: "Para dúvidas ou solicitações sobre esta Política de Privacidade:", sub: "Hexlume Games &nbsp;·&nbsp; Desenvolvedor independente de jogos" }
+            },
+
+            /* ── РУССКИЙ ── */
+            ru: {
+                label: "🇷🇺 Русский", dir: "ltr", title: "Политика конфиденциальности",
+                overview: { badge: "Обзор", text: ["Hexlume Games («мы») разработала <strong>Sudoku 9</strong> как бесплатное мобильное приложение. Настоящая Политика конфиденциальности объясняет, какие данные мы собираем, как их используем и каковы ваши права.", "Загружая или используя Sudoku 9, вы соглашаетесь с настоящей политикой. Если вы не согласны, прекратите использование приложения."] },
+                collection: { heading: "Собираемые данные", intro: "Мы собираем следующие виды информации:", items: ["<strong>Технические данные устройства:</strong> Модель, версия ОС, версия приложения, язык и общее местоположение (страна/регион). Автоматически собираются через наших партнёров по рекламе и аналитике.", "<strong>Данные об использовании:</strong> Сыгранные сессии, выбранные уровни сложности и взаимодействие с функциями — только для улучшения игрового процесса.", "<strong>Рекламные идентификаторы:</strong> С вашего согласия Google AdMob может собирать рекламные идентификаторы для показа персонализированной рекламы.", "<strong>Прогресс игры (только локально):</strong> Ваш прогресс, статистика и настройки хранятся исключительно на вашем устройстве через <code>localStorage</code>. Мы не передаём эти данные на сервер."], outro: "Мы <strong>не</strong> собираем имена, адреса электронной почты, номера телефонов, точные GPS-координаты или другие личные идентификационные данные." },
+                usage: { heading: "Использование данных", items: ["Показ рекламы через Google AdMob (баннеры, полноэкранные и вознаграждаемые видеообъявления).", "Мониторинг стабильности приложения и диагностика технических проблем.", "Анализ агрегированных игровых паттернов для улучшения функций.", "Соблюдение правовых обязательств."] },
+                advertising: { heading: "Реклама и Google AdMob", text: ["Sudoku 9 использует <strong>Google AdMob</strong> для показа рекламы. AdMob может собирать и обрабатывать данные в соответствии со своей Политикой конфиденциальности и Условиями использования.", "При первом запуске вы будете спрошены о согласии или отказе от <strong>персонализированной рекламы</strong>. При отказе будут показаны неперсонализированные (контекстные) объявления. Вы можете изменить выбор в любое время в <strong>Настройки → Конфиденциальность</strong>."], links: [{ label: "Политика конфиденциальности Google", url: "https://policies.google.com/privacy" }, { label: "Отключить персонализированную рекламу", url: "https://adssettings.google.com" }], noSell: "Мы не продаём ваши персональные данные третьим сторонам." },
+                sharing: { heading: "Передача данных третьим сторонам", intro: "Мы не продаём, не обмениваем и не сдаём в аренду вашу личную информацию. Ограниченные агрегированные данные могут передаваться:", items: ["<strong>Google AdMob</strong> — для доставки и измерения рекламы.", "<strong>Правовым органам</strong> — когда это требуется в соответствии с применимым законодательством, судебным решением или государственным регулированием."], note: "Все сторонние сервисы имеют собственные политики конфиденциальности, регулирующие использование ваших данных." },
+                children: { heading: "Конфиденциальность детей", text: ["Sudoku 9 не предназначена для детей до <strong>13 лет</strong>. Мы не собираем намеренно личные данные детей.", "Если вы родитель или опекун и считаете, что ваш ребёнок передал нам личные данные, свяжитесь с нами по адресу ниже — мы немедленно удалим эту информацию.", "Приложение не использует настройки рекламы для детей (COPPA) и не подавалось как приложение «Для семей»."] },
+                rights: { heading: "Ваши права (GDPR и законодательство США)", intro: "В зависимости от вашего местонахождения у вас могут быть следующие права:", items: ["<strong>Доступ:</strong> Запросить копию хранимых о вас данных.", "<strong>Исправление:</strong> Запросить исправление неточных данных.", "<strong>Удаление:</strong> Запросить удаление ваших персональных данных.", "<strong>Ограничение:</strong> Запросить ограничение обработки ваших данных.", "<strong>Переносимость:</strong> Получить данные в структурированном машиночитаемом формате.", "<strong>Возражение:</strong> Возразить против обработки на основе законных интересов.", "<strong>Отзыв согласия:</strong> Отозвать согласие на рекламу в любое время в приложении."], legal: "Для пользователей ЕС/ЕЭЗ правовым основанием для обработки рекламных данных является ваше <strong>явное согласие</strong>, полученное через экран согласия в приложении. Пользователи штатов США с применимыми законами о конфиденциальности (CCPA/CPRA, CDPA, CPA и др.) могут в любое время отказаться от продажи или передачи данных через настройки согласия. Свяжитесь с нами для реализации этих прав." },
+                security: { heading: "Безопасность", text: ["Мы принимаем разумные технические и организационные меры для защиты ограниченного количества данных, которые мы обрабатываем. Однако ни один метод передачи данных через Интернет или электронного хранения не является на 100% безопасным, и мы не можем гарантировать абсолютную защиту."] },
+                changes: { heading: "Изменения настоящей Политики", text: ["Мы можем периодически обновлять настоящую Политику конфиденциальности. При обновлении мы будем изменять дату «Последнего обновления» в верхней части страницы. Рекомендуем периодически проверять политику.", "Продолжение использования Sudoku 9 после публикации изменений означает ваше согласие с обновлённой политикой."] },
+                contact: { heading: "Связаться с нами", pre: "По вопросам или запросам, связанным с настоящей Политикой конфиденциальности:", sub: "Hexlume Games &nbsp;·&nbsp; Независимый разработчик игр" }
+            },
+
+            /* ── العربية ── */
+            ar: {
+                label: "🇸🇦 العربية", dir: "rtl", title: "سياسة الخصوصية",
+                overview: { badge: "نظرة عامة", text: ["طوّرت Hexlume Games («نحن») تطبيق <strong>Sudoku 9</strong> بوصفه تطبيقاً مجانياً للهاتف المحمول. تشرح سياسة الخصوصية هذه المعلومات التي نجمعها وكيفية استخدامها والخيارات المتاحة لك.", "بتنزيل Sudoku 9 أو استخدامه، فإنك توافق على هذه السياسة. إذا كنت لا توافق، يُرجى التوقف عن استخدام التطبيق."] },
+                collection: { heading: "المعلومات التي نجمعها", intro: "نجمع الأنواع التالية من المعلومات:", items: ["<strong>البيانات التقنية للجهاز:</strong> طراز الجهاز، إصدار نظام التشغيل، إصدار التطبيق، اللغة، والموقع العام (البلد/المنطقة). تُجمع تلقائياً عبر شركاء الإعلانات والتحليلات.", "<strong>بيانات الاستخدام:</strong> الجلسات التي تم لعبها، مستويات الصعوبة المختارة، والتفاعل مع الميزات — لأغراض تحسين تجربة اللعب فقط.", "<strong>معرّفات الإعلانات:</strong> بموافقتك، قد تجمع Google AdMob معرّفات الإعلانات لعرض إعلانات مخصّصة.", "<strong>تقدّم اللعبة (محلياً فقط):</strong> يُحفظ تقدّمك وإحصاءاتك وإعداداتك على جهازك فقط عبر <code>localStorage</code>. لا نرسل هذه البيانات إلى أي خادم."], outro: "<strong>لا</strong> نجمع اسمك أو بريدك الإلكتروني أو رقم هاتفك أو موقع GPS الدقيق أو أي معلومات تعريفية شخصية أخرى." },
+                usage: { heading: "كيف نستخدم المعلومات", items: ["عرض الإعلانات عبر Google AdMob (إعلانات بانر وإعلانات بينية وإعلانات فيديو مُكافِئة).", "مراقبة استقرار التطبيق وتشخيص المشكلات التقنية.", "تحليل أنماط اللعب المجمّعة لتحسين الميزات المستقبلية.", "الامتثال للالتزامات القانونية."] },
+                advertising: { heading: "الإعلانات وGoogle AdMob", text: ["يستخدم Sudoku 9 منصة <strong>Google AdMob</strong> لعرض الإعلانات. قد تجمع AdMob البيانات وتعالجها وفقاً لسياسة الخصوصية والشروط الخاصة بـ Google.", "عند التشغيل الأول، ستُطلب منك الموافقة على <strong>الإعلانات المخصّصة</strong> أو رفضها. في حال الرفض، ستُعرض إعلانات غير مخصّصة. يمكنك تغيير تفضيلاتك في أي وقت من <strong>الإعدادات ← الخصوصية</strong>."], links: [{ label: "سياسة خصوصية Google", url: "https://policies.google.com/privacy" }, { label: "إيقاف الإعلانات المخصّصة", url: "https://adssettings.google.com" }], noSell: "لا نبيع بياناتك الشخصية لأي طرف ثالث." },
+                sharing: { heading: "مشاركة البيانات والأطراف الثالثة", intro: "لا نبيع معلوماتك الشخصية ولا نتاجر بها ولا نؤجّرها. يمكن مشاركة بيانات مجمّعة ومحدودة مع:", items: ["<strong>Google AdMob</strong> — لتسليم الإعلانات وقياس أدائها.", "<strong>الجهات القانونية</strong> — عند الضرورة للامتثال للقانون المعمول به أو أمر قضائي أو لائحة حكومية."], note: "جميع خدمات الأطراف الثالثة لديها سياسات الخصوصية الخاصة بها التي تنظّم استخدام بياناتك." },
+                children: { heading: "خصوصية الأطفال", text: ["لا يستهدف Sudoku 9 الأطفال دون سن <strong>13</strong> عاماً. لا نجمع معلومات شخصية من الأطفال عن علم.", "إذا كنت والداً أو وصياً وتعتقد أن طفلك زوّدنا ببيانات شخصية، يُرجى التواصل معنا على العنوان أدناه وسنحذف تلك المعلومات فوراً.", "لا يستخدم التطبيق إعدادات الإعلانات الموجّهة للأطفال (COPPA) ولم يُقدَّم بوصفه تطبيقاً «مصمَّماً للعائلات»."] },
+                rights: { heading: "حقوقك (اللائحة العامة لحماية البيانات GDPR وقوانين الولايات الأمريكية)", intro: "بحسب موقعك، قد تتمتع بالحقوق التالية:", items: ["<strong>الوصول:</strong> طلب نسخة من البيانات الشخصية التي نحتفظ بها عنك.", "<strong>التصحيح:</strong> طلب تصحيح البيانات غير الدقيقة.", "<strong>الحذف:</strong> طلب مسح بياناتك الشخصية ('حق النسيان').", "<strong>التقييد:</strong> طلب تقييد استخدامنا لبياناتك.", "<strong>قابلية النقل:</strong> استلام بياناتك بتنسيق منظَّم وقابل للقراءة آلياً.", "<strong>الاعتراض:</strong> الاعتراض على المعالجة القائمة على المصلحة المشروعة.", "<strong>سحب الموافقة:</strong> سحب موافقتك على الإعلانات في أي وقت من التطبيق."], legal: "بالنسبة لمستخدمي الاتحاد الأوروبي، يستند أساسنا القانوني لمعالجة بيانات الإعلانات إلى <strong>موافقتك الصريحة</strong> التي نحصل عليها من خلال شاشة الموافقة في التطبيق. يمكن لمستخدمي الولايات الأمريكية ذات القوانين المعمول بها (CCPA/CPRA وCDPA وCPA وغيرها) رفض بيع بياناتهم أو مشاركتها في أي وقت. تواصل معنا لممارسة هذه الحقوق." },
+                security: { heading: "الأمن", text: ["نتخذ تدابير تقنية وتنظيمية معقولة لحماية البيانات المحدودة التي نعالجها. غير أن أي طريقة لنقل البيانات عبر الإنترنت أو التخزين الإلكتروني ليست آمنة بنسبة 100%، ولا يمكننا ضمان الأمن المطلق."] },
+                changes: { heading: "التغييرات على هذه السياسة", text: ["قد نُحدِّث سياسة الخصوصية هذه من وقت لآخر. عند إجراء أي تعديل، سنراجع تاريخ 'آخر تحديث' أعلى هذه الصفحة. نشجّعك على مراجعتها بصفة دورية.", "استمرارك في استخدام Sudoku 9 بعد نشر التعديلات يُعدّ موافقةً منك على السياسة المُحدَّثة."] },
+                contact: { heading: "تواصل معنا", pre: "لأي استفسارات أو طلبات تتعلق بسياسة الخصوصية هذه:", sub: "Hexlume Games &nbsp;·&nbsp; مطوّر ألعاب مستقل" }
+            },
+
+            /* ── 中文 ── */
+            zh: {
+                label: "🇨🇳 中文", dir: "ltr", title: "隐私政策",
+                overview: { badge: "概述", text: ["Hexlume Games（\"我们\"）将 <strong>Sudoku 9</strong> 开发为一款免费移动应用程序。本隐私政策说明我们收集哪些信息、如何使用以及您的选择权。", "下载或使用 Sudoku 9 即表示您同意本政策。如您不同意，请停止使用该应用。"] },
+                collection: { heading: "我们收集的信息", intro: "我们收集以下类型的信息：", items: ["<strong>设备及技术数据：</strong>设备型号、操作系统版本、应用版本、语言和大致位置（国家/地区）。通过我们的广告和分析合作伙伴自动收集。", "<strong>使用数据：</strong>游戏局数、选择的难度级别及功能交互——仅用于改善游戏体验。", "<strong>广告标识符：</strong>经您同意，Google AdMob 可能收集广告标识符以投放个性化广告。", "<strong>游戏进度（仅本地）：</strong>您的谜题进度、统计数据和设置仅通过 <code>localStorage</code> 存储在您的设备上。我们不会将这些数据传输至任何服务器。"], outro: "我们<strong>不会</strong>收集您的姓名、电子邮件、电话号码、精确 GPS 位置或任何其他个人身份信息。" },
+                usage: { heading: "我们如何使用信息", items: ["通过 Google AdMob 展示广告（横幅广告、插页广告和激励视频广告）。", "监控应用稳定性并通过崩溃报告诊断技术问题。", "分析汇总的游戏模式以改善未来游戏功能。", "遵守法律义务。"] },
+                advertising: { heading: "广告与 Google AdMob", text: ["Sudoku 9 使用 <strong>Google AdMob</strong> 展示广告。AdMob 可能根据 Google 自己的隐私政策和服务条款收集并处理数据。", "首次启动时，将请求您同意或拒绝<strong>个性化广告</strong>。如您拒绝，将显示非个性化（情境性）广告。您可随时在<strong>设置 → 隐私</strong>中更改偏好。"], links: [{ label: "Google 隐私政策", url: "https://policies.google.com/privacy" }, { label: "退出个性化广告", url: "https://adssettings.google.com" }], noSell: "我们不向任何第三方出售您的个人数据。" },
+                sharing: { heading: "数据共享与第三方", intro: "我们不出售、交换或出租您的个人信息。有限的汇总数据可能与以下方共享：", items: ["<strong>Google AdMob</strong>——用于广告投放和效果衡量。", "<strong>法律机关</strong>——在适用法律、法院命令或政府法规要求时。"], note: "所有第三方服务均有其自己的隐私政策，管理您数据的使用。" },
+                children: { heading: "儿童隐私", text: ["Sudoku 9 不面向 <strong>13 岁</strong>以下儿童。我们不会故意收集儿童的个人信息。", "如您是父母或监护人，并认为您的孩子向我们提供了个人数据，请通过以下地址联系我们，我们将立即删除该信息。", "本应用不使用面向儿童的广告设置 (COPPA)，且未作为\"专为家庭设计\"的应用提交。"] },
+                rights: { heading: "您的权利（GDPR 及美国各州隐私法）", intro: "根据您所在地区，您可能拥有以下权利：", items: ["<strong>访问：</strong>请求获取我们持有的您的个人数据副本。", "<strong>更正：</strong>请求更正不准确的数据。", "<strong>删除：</strong>请求删除您的个人数据（\"被遗忘权\"）。", "<strong>限制：</strong>请求限制我们使用您数据的方式。", "<strong>可携带：</strong>以结构化、机器可读格式获取您的数据。", "<strong>反对：</strong>反对基于合法利益的处理。", "<strong>撤回同意：</strong>随时在应用内撤回您的广告同意。"], legal: "对于欧盟/欧洲经济区用户，我们处理广告数据的法律依据是您通过应用内同意屏幕给予的<strong>明确同意</strong>。对于适用隐私法的美国各州用户（加州 CCPA/CPRA、弗吉尼亚州 CDPA、科罗拉多州 CPA 等），您可随时通过应用内同意设置选择退出个人信息的出售或共享。如需行使这些权利，请联系我们。" },
+                security: { heading: "安全性", text: ["我们采取合理的技术和组织措施来保护我们处理的有限数据。但是，通过互联网传输或电子存储的任何方法都不能保证 100% 安全，我们无法保证绝对安全。"] },
+                changes: { heading: "本政策的变更", text: ["我们可能会不时更新本隐私政策。更新时，我们将修订本页顶部的\"最后更新\"日期。我们建议您定期查阅本政策。", "更改发布后继续使用 Sudoku 9 即表示您接受更新后的政策。"] },
+                contact: { heading: "联系我们", pre: "如对本隐私政策有任何问题或请求，请联系：", sub: "Hexlume Games &nbsp;·&nbsp; 独立游戏开发商" }
+            },
+
+            /* ── 日本語 ── */
+            ja: {
+                label: "🇯🇵 日本語", dir: "ltr", title: "プライバシーポリシー",
+                overview: { badge: "概要", text: ["Hexlume Games（「当社」）は <strong>Sudoku 9</strong> を無料モバイルアプリとして開発しました。本プライバシーポリシーは、収集する情報、その使用方法、およびお客様の選択肢について説明します。", "Sudoku 9 をダウンロードまたはご利用いただくことで、本ポリシーに同意したものとみなされます。同意されない場合は、アプリのご利用を中止してください。"] },
+                collection: { heading: "収集する情報", intro: "当社は以下の種類の情報を収集します：", items: ["<strong>デバイス・技術データ：</strong>デバイスモデル、OS バージョン、アプリバージョン、言語、大まかな位置情報（国/地域）。広告・分析パートナーを通じて自動的に収集されます。", "<strong>利用データ：</strong>プレイセッション数、選択した難易度、機能の操作状況 — ゲーム体験の向上のみに使用されます。", "<strong>広告識別子：</strong>ご同意のもと、Google AdMob がパーソナライズ広告配信のために広告識別子を収集する場合があります。", "<strong>ゲーム進行状況（端末のみ）：</strong>パズルの進行状況、統計、設定は <code>localStorage</code> を通じてお客様の端末のみに保存されます。このデータはサーバーに送信しません。"], outro: "お名前、メールアドレス、電話番号、正確な GPS 位置情報などの個人識別情報は直接収集<strong>しません</strong>。" },
+                usage: { heading: "情報の利用方法", items: ["Google AdMob を通じた広告の表示（バナー、インタースティシャル、リワード動画広告）。", "アプリの安定性の監視と、クラッシュレポートによる技術的問題の診断。", "集約されたゲームパターンの分析による将来の機能改善。", "法的義務への対応。"] },
+                advertising: { heading: "広告と Google AdMob", text: ["Sudoku 9 は広告表示のため <strong>Google AdMob</strong> を使用しています。AdMob は Google 独自のプライバシーポリシーおよび利用規約に従ってデータを収集・処理する場合があります。", "初回起動時に<strong>パーソナライズ広告</strong>への同意または拒否を求めます。拒否された場合はパーソナライズされない（コンテキスト）広告が表示されます。<strong>設定 → プライバシー</strong>からいつでも変更できます。"], links: [{ label: "Google プライバシーポリシー", url: "https://policies.google.com/privacy" }, { label: "パーソナライズ広告のオプトアウト", url: "https://adssettings.google.com" }], noSell: "個人データを第三者に販売することはありません。" },
+                sharing: { heading: "データの共有と第三者", intro: "お客様の個人情報を販売、交換、貸出しすることはありません。限定された集約データを以下と共有する場合があります：", items: ["<strong>Google AdMob</strong> — 広告の配信と効果測定のため。", "<strong>法的機関</strong> — 適用法、裁判所命令、または政府規制に従うために必要な場合。"], note: "すべてのサードパーティサービスには、お客様のデータの利用を定めた独自のプライバシーポリシーがあります。" },
+                children: { heading: "子どものプライバシー", text: ["Sudoku 9 は <strong>13 歳</strong>未満の方を対象としていません。当社は意図的に子どもの個人情報を収集しません。", "保護者として、お子様が当社に個人データを提供したと思われる場合は、以下の連絡先にご連絡ください。速やかに当該情報を削除します。", "本アプリは子ども向け広告設定（COPPA）を使用しておらず、「ファミリー向け」アプリとして申請されていません。"] },
+                rights: { heading: "お客様の権利（GDPR および米国各州プライバシー法）", intro: "居住地によっては、以下の権利が認められる場合があります：", items: ["<strong>アクセス：</strong>当社が保有するお客様の個人データのコピーを請求する権利。", "<strong>訂正：</strong>不正確なデータの訂正を請求する権利。", "<strong>削除：</strong>個人データの消去を請求する権利（「忘れられる権利」）。", "<strong>制限：</strong>データの利用制限を請求する権利。", "<strong>ポータビリティ：</strong>構造化された機械読み取り可能な形式でデータを受け取る権利。", "<strong>異議申し立て：</strong>正当な利益に基づく処理に異議を申し立てる権利。", "<strong>同意の撤回：</strong>アプリからいつでも広告同意を撤回する権利。"], legal: "EU/EEA ユーザーの場合、広告データ処理の法的根拠はアプリ内同意画面を通じて取得された<strong>明示的な同意</strong>です。適用プライバシー法を持つ米国各州のユーザー（カリフォルニア CCPA/CPRA、バージニア CDPA、コロラド CPA など）は、アプリの同意設定からいつでも個人情報の販売または共有をオプトアウトできます。これらの権利を行使するには、下記にお問い合わせください。" },
+                security: { heading: "セキュリティ", text: ["当社は処理する限られたデータを保護するために合理的な技術的・組織的措置を講じています。ただし、インターネット経由の送信や電子ストレージは 100% 安全ではなく、絶対的なセキュリティを保証することはできません。"] },
+                changes: { heading: "本ポリシーの変更", text: ["本プライバシーポリシーは随時更新される場合があります。更新の際は、本ページ上部の「最終更新日」を変更します。定期的にご確認いただくことをお勧めします。", "変更が公開された後も Sudoku 9 を引き続きご利用いただくことで、更新されたポリシーへの同意とみなされます。"] },
+                contact: { heading: "お問い合わせ", pre: "本プライバシーポリシーに関するご質問やご要望は以下までお問い合わせください：", sub: "Hexlume Games &nbsp;·&nbsp; インディーゲーム開発者" }
+            },
+
+            /* ── 한국어 ── */
+            ko: {
+                label: "🇰🇷 한국어", dir: "ltr", title: "개인정보 처리방침",
+                overview: { badge: "개요", text: ["Hexlume Games('당사')는 <strong>Sudoku 9</strong>를 무료 모바일 앱으로 개발했습니다. 본 개인정보 처리방침은 수집하는 정보, 사용 방법 및 귀하의 선택권을 설명합니다.", "Sudoku 9를 다운로드하거나 사용하면 본 방침에 동의한 것으로 간주됩니다. 동의하지 않으시면 앱 사용을 중단해 주세요."] },
+                collection: { heading: "수집하는 정보", intro: "다음 유형의 정보를 수집합니다:", items: ["<strong>기기 및 기술 데이터:</strong> 기기 모델, OS 버전, 앱 버전, 언어, 대략적 위치(국가/지역). 광고 및 분석 파트너를 통해 자동 수집됩니다.", "<strong>사용 데이터:</strong> 플레이 세션, 선택한 난이도, 기능 상호작용 — 게임 경험 개선만을 위해 사용됩니다.", "<strong>광고 식별자:</strong> 귀하의 동의 시 Google AdMob이 맞춤형 광고 게재를 위해 광고 식별자를 수집할 수 있습니다.", "<strong>게임 진행(로컬 전용):</strong> 퍼즐 진행, 통계, 설정은 <code>localStorage</code>를 통해 기기에만 저장됩니다. 이 데이터를 서버에 전송하지 않습니다."], outro: "이름, 이메일, 전화번호, 정확한 GPS 위치 등 개인 식별 정보는 직접적으로 수집<strong>하지 않습니다</strong>." },
+                usage: { heading: "정보의 사용 방법", items: ["Google AdMob을 통해 광고 표시(배너, 전면 광고, 보상형 동영상 광고).", "앱 안정성 모니터링 및 충돌 보고를 통한 기술 문제 진단.", "집계된 게임 패턴 분석을 통한 향후 기능 개선.", "법적 의무 준수."] },
+                advertising: { heading: "광고 및 Google AdMob", text: ["Sudoku 9는 광고 표시를 위해 <strong>Google AdMob</strong>을 사용합니다. AdMob은 자체 개인정보 처리방침 및 서비스 약관에 따라 데이터를 수집·처리할 수 있습니다.", "최초 실행 시 <strong>맞춤형 광고</strong>에 대한 동의 또는 거부를 요청합니다. 거부하면 비개인화(문맥적) 광고가 표시됩니다. <strong>설정 → 개인정보</strong>에서 언제든지 변경할 수 있습니다."], links: [{ label: "Google 개인정보처리방침", url: "https://policies.google.com/privacy" }, { label: "맞춤형 광고 거부", url: "https://adssettings.google.com" }], noSell: "개인 데이터를 제3자에게 판매하지 않습니다." },
+                sharing: { heading: "데이터 공유 및 제3자", intro: "개인 정보를 판매, 교환, 임대하지 않습니다. 제한된 집계 데이터는 다음과 공유될 수 있습니다:", items: ["<strong>Google AdMob</strong> — 광고 게재 및 측정 목적.", "<strong>법적 기관</strong> — 적용 가능한 법률, 법원 명령 또는 정부 규정 준수가 필요한 경우."], note: "모든 제3자 서비스는 귀하의 데이터 사용을 규율하는 자체 개인정보 처리방침을 보유합니다." },
+                children: { heading: "아동 개인정보 보호", text: ["Sudoku 9는 <strong>13세</strong> 미만 아동을 대상으로 하지 않습니다. 아동의 개인정보를 의도적으로 수집하지 않습니다.", "부모나 보호자로서 자녀가 개인 데이터를 제공했다고 판단되면 아래 주소로 연락해 주시면 즉시 삭제하겠습니다.", "본 앱은 아동 대상 광고 설정(COPPA)을 사용하지 않으며 '가족용으로 설계된' 앱으로 등록되지 않았습니다."] },
+                rights: { heading: "귀하의 권리(GDPR 및 미국 주 개인정보보호법)", intro: "귀하의 위치에 따라 다음 권리를 가질 수 있습니다:", items: ["<strong>액세스:</strong> 당사가 보유한 귀하의 개인 데이터 사본 요청.", "<strong>정정:</strong> 부정확한 데이터 수정 요청.", "<strong>삭제:</strong> 개인 데이터 삭제 요청('잊힐 권리').", "<strong>제한:</strong> 데이터 사용 제한 요청.", "<strong>이동성:</strong> 구조화된 기계 판독 가능 형식으로 데이터 수신.", "<strong>이의 제기:</strong> 정당한 이익에 기반한 처리에 이의 제기.", "<strong>동의 철회:</strong> 앱에서 언제든지 광고 동의 철회."], legal: "EU/EEA 사용자의 경우 광고 데이터 처리의 법적 근거는 앱 내 동의 화면을 통해 얻은 <strong>명시적 동의</strong>입니다. 적용 가능한 개인정보보호법을 가진 미국 주 사용자(캘리포니아 CCPA/CPRA, 버지니아 CDPA, 콜로라도 CPA 등)는 언제든지 앱 내 동의 설정을 통해 개인정보 판매 또는 공유를 거부할 수 있습니다. 이러한 권리를 행사하려면 아래 정보로 문의해 주세요." },
+                security: { heading: "보안", text: ["당사가 처리하는 제한된 데이터를 보호하기 위해 합리적인 기술적·조직적 조치를 구현합니다. 그러나 인터넷을 통한 전송이나 전자 저장 방법 중 100% 안전한 것은 없으며, 절대적 보안을 보장할 수 없습니다."] },
+                changes: { heading: "본 방침의 변경", text: ["본 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 변경 시 이 페이지 상단의 '최종 업데이트' 날짜를 수정합니다. 정기적으로 검토하시기 바랍니다.", "변경 사항 게시 후 Sudoku 9를 계속 사용하면 업데이트된 방침에 동의한 것으로 간주됩니다."] },
+                contact: { heading: "문의하기", pre: "본 개인정보 처리방침에 관한 질문이나 요청은 아래로 연락해 주세요:", sub: "Hexlume Games &nbsp;·&nbsp; 독립 게임 개발자" }
+            },
+
+            /* ── हिंदी ── */
+            hi: {
+                label: "🇮🇳 हिंदी", dir: "ltr", title: "गोपनीयता नीति",
+                overview: { badge: "अवलोकन", text: ["Hexlume Games ('हम') ने <strong>Sudoku 9</strong> को एक निःशुल्क मोबाइल ऐप के रूप में विकसित किया है। यह गोपनीयता नीति बताती है कि हम क्या जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं और आपके पास क्या विकल्प हैं।", "Sudoku 9 को डाउनलोड या उपयोग करके आप इस नीति से सहमत होते हैं। यदि आप सहमत नहीं हैं, तो कृपया ऐप का उपयोग बंद करें।"] },
+                collection: { heading: "एकत्र की जाने वाली जानकारी", intro: "हम निम्नलिखित प्रकार की जानकारी एकत्र करते हैं:", items: ["<strong>डिवाइस और तकनीकी डेटा:</strong> डिवाइस मॉडल, OS संस्करण, ऐप संस्करण, भाषा और सामान्य स्थान (देश/क्षेत्र)। हमारे विज्ञापन और विश्लेषण भागीदारों के माध्यम से स्वचालित रूप से एकत्र किया जाता है।", "<strong>उपयोग डेटा:</strong> खेले गए सत्र, चुने गए कठिनाई स्तर और सुविधा इंटरैक्शन — केवल गेमप्ले अनुभव सुधारने के लिए।", "<strong>विज्ञापन पहचानकर्ता:</strong> आपकी सहमति से Google AdMob वैयक्तिकृत विज्ञापन दिखाने के लिए विज्ञापन पहचानकर्ता एकत्र कर सकता है।", "<strong>गेम प्रगति (केवल स्थानीय):</strong> आपकी प्रगति, आँकड़े और सेटिंग केवल <code>localStorage</code> के माध्यम से आपके डिवाइस पर संग्रहीत हैं। हम इस डेटा को किसी सर्वर पर नहीं भेजते।"], outro: "हम आपका नाम, ईमेल पता, फ़ोन नंबर, सटीक GPS स्थान या कोई अन्य सीधे पहचान योग्य व्यक्तिगत जानकारी <strong>एकत्र नहीं करते</strong>।" },
+                usage: { heading: "जानकारी का उपयोग", items: ["Google AdMob के माध्यम से विज्ञापन दिखाना (बैनर, इंटरस्टिशियल और रिवार्डेड वीडियो विज्ञापन)।", "क्रैश रिपोर्टिंग के माध्यम से ऐप स्थिरता की निगरानी और तकनीकी समस्याओं का निदान।", "भविष्य के गेम फीचर सुधारने के लिए समग्र गेमप्ले पैटर्न का विश्लेषण।", "कानूनी दायित्वों का पालन।"] },
+                advertising: { heading: "विज्ञापन और Google AdMob", text: ["Sudoku 9 विज्ञापन दिखाने के लिए <strong>Google AdMob</strong> का उपयोग करता है। AdMob Google की अपनी गोपनीयता नीति और सेवा की शर्तों के अनुसार डेटा एकत्र और संसाधित कर सकता है।", "पहली बार खोलने पर <strong>वैयक्तिकृत विज्ञापन</strong> के लिए सहमति या अस्वीकृति का अनुरोध किया जाएगा। अस्वीकार करने पर गैर-वैयक्तिकृत (प्रासंगिक) विज्ञापन दिखाए जाएंगे। आप <strong>सेटिंग → गोपनीयता</strong> में कभी भी बदल सकते हैं।"], links: [{ label: "Google गोपनीयता नीति", url: "https://policies.google.com/privacy" }, { label: "वैयक्तिकृत विज्ञापन से बाहर निकलें", url: "https://adssettings.google.com" }], noSell: "हम आपका व्यक्तिगत डेटा किसी तीसरे पक्ष को नहीं बेचते।" },
+                sharing: { heading: "डेटा साझाकरण और तृतीय पक्ष", intro: "हम आपकी व्यक्तिगत जानकारी को नहीं बेचते, बदलते या किराए पर नहीं देते। सीमित, समग्र डेटा निम्नलिखित के साथ साझा किया जा सकता है:", items: ["<strong>Google AdMob</strong> — विज्ञापन वितरण और माप के लिए।", "<strong>कानूनी अधिकारी</strong> — जब लागू कानून, न्यायालय आदेश या सरकारी विनियमन का पालन करना आवश्यक हो।"], note: "सभी तृतीय-पक्ष सेवाओं की अपनी गोपनीयता नीतियां हैं जो आपके डेटा के उपयोग को नियंत्रित करती हैं।" },
+                children: { heading: "बच्चों की गोपनीयता", text: ["Sudoku 9 <strong>13 वर्ष</strong> से कम उम्र के बच्चों के लिए नहीं है। हम जानबूझकर बच्चों की व्यक्तिगत जानकारी एकत्र नहीं करते।", "यदि आप माता-पिता या अभिभावक हैं और मानते हैं कि आपके बच्चे ने हमें व्यक्तिगत डेटा प्रदान किया है, तो नीचे दिए पते पर संपर्क करें — हम तुरंत उस जानकारी को हटा देंगे।", "ऐप बच्चों के लिए निर्देशित विज्ञापन सेटिंग (COPPA) का उपयोग नहीं करता और इसे 'परिवारों के लिए डिज़ाइन किया गया' ऐप के रूप में नहीं भेजा गया है।"] },
+                rights: { heading: "आपके अधिकार (GDPR और अमेरिकी राज्य गोपनीयता)", intro: "आपके स्थान के आधार पर आपके पास निम्नलिखित अधिकार हो सकते हैं:", items: ["<strong>पहुँच:</strong> हमारे पास मौजूद आपके व्यक्तिगत डेटा की प्रति का अनुरोध।", "<strong>सुधार:</strong> गलत डेटा को सुधारने का अनुरोध।", "<strong>हटाना:</strong> आपके व्यक्तिगत डेटा को हटाने का अनुरोध ('भूले जाने का अधिकार')।", "<strong>प्रतिबंध:</strong> हमारे डेटा उपयोग को सीमित करने का अनुरोध।", "<strong>पोर्टेबिलिटी:</strong> संरचित, मशीन-पठनीय प्रारूप में अपना डेटा प्राप्त करना।", "<strong>आपत्ति:</strong> वैध हित के आधार पर प्रसंस्करण पर आपत्ति।", "<strong>सहमति वापस लें:</strong> ऐप में कभी भी विज्ञापन सहमति वापस लें।"], legal: "EU/EEA उपयोगकर्ताओं के लिए, विज्ञापन डेटा प्रसंस्करण का कानूनी आधार हमारी इन-ऐप सहमति स्क्रीन के माध्यम से प्राप्त आपकी <strong>स्पष्ट सहमति</strong> है। लागू गोपनीयता कानूनों वाले अमेरिकी राज्यों के उपयोगकर्ता (CCPA/CPRA, CDPA, CPA, आदि) इन-ऐप सहमति सेटिंग्स के माध्यम से कभी भी व्यक्तिगत जानकारी की बिक्री या साझाकरण से बाहर निकल सकते हैं। इन अधिकारों का उपयोग करने के लिए नीचे दी गई जानकारी का उपयोग करके संपर्क करें।" },
+                security: { heading: "सुरक्षा", text: ["हम जो सीमित डेटा संसाधित करते हैं उसकी सुरक्षा के लिए उचित तकनीकी और संगठनात्मक उपाय लागू करते हैं। हालांकि, इंटरनेट पर प्रसारण या इलेक्ट्रॉनिक भंडारण की कोई भी विधि 100% सुरक्षित नहीं है और हम पूर्ण सुरक्षा की गारंटी नहीं दे सकते।"] },
+                changes: { heading: "इस नीति में परिवर्तन", text: ["हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। ऐसा करने पर, इस पृष्ठ के शीर्ष पर 'अंतिम अपडेट' तारीख को संशोधित करेंगे। हम आपको इस नीति की समय-समय पर समीक्षा करने की सलाह देते हैं।", "परिवर्तन प्रकाशित होने के बाद Sudoku 9 का उपयोग जारी रखना अपडेट की गई नीति की आपकी स्वीकृति है।"] },
+                contact: { heading: "हमसे संपर्क करें", pre: "इस गोपनीयता नीति के बारे में किसी भी प्रश्न या अनुरोध के लिए, कृपया संपर्क करें:", sub: "Hexlume Games &nbsp;·&nbsp; स्वतंत्र गेम डेवलपर" }
+            },
+
+            /* ── NEDERLANDS ── */
+            nl: {
+                label: "🇳🇱 Nederlands", dir: "ltr", title: "Privacybeleid",
+                overview: { badge: "Overzicht", text: ["Hexlume Games ('wij') heeft <strong>Sudoku 9</strong> ontwikkeld als een gratis mobiele applicatie. Dit Privacybeleid legt uit welke informatie wij verzamelen, hoe wij die gebruiken en welke keuzes u heeft.", "Door Sudoku 9 te downloaden of te gebruiken, gaat u akkoord met dit beleid. Als u niet akkoord gaat, stop dan met het gebruik van de app."] },
+                collection: { heading: "Verzamelde Informatie", intro: "Wij verzamelen de volgende soorten informatie:", items: ["<strong>Apparaat- en technische gegevens:</strong> Apparaatmodel, OS-versie, app-versie, taal en algemene locatie (land/regio). Automatisch verzameld via onze reclame- en analysepartners.", "<strong>Gebruiksgegevens:</strong> Gespeelde sessies, gekozen moeilijkheidsgraden en feature-interacties — uitsluitend om de spelervaring te verbeteren.", "<strong>Reclame-ID's:</strong> Met uw toestemming kan Google AdMob reclame-ID's verzamelen om gepersonaliseerde advertenties te tonen.", "<strong>Spelvoortgang (alleen lokaal):</strong> Uw voortgang, statistieken en instellingen worden uitsluitend op uw apparaat opgeslagen via <code>localStorage</code>. Wij sturen deze gegevens niet naar een server."], outro: "Wij verzamelen <strong>niet</strong> uw naam, e-mailadres, telefoonnummer, precieze GPS-locatie of andere direct identificeerbare informatie." },
+                usage: { heading: "Gebruik van Informatie", items: ["Advertenties weergeven via Google AdMob (banners, interstitials en beloonde videoadvertenties).", "App-stabiliteit bewaken en technische problemen diagnosticeren via crashrapporten.", "Geaggregeerde spelpatronen analyseren om toekomstige functies te verbeteren.", "Voldoen aan wettelijke verplichtingen."] },
+                advertising: { heading: "Reclame &amp; Google AdMob", text: ["Sudoku 9 gebruikt <strong>Google AdMob</strong> voor het weergeven van advertenties. AdMob kan gegevens verzamelen en verwerken conform Googles eigen Privacybeleid en Servicevoorwaarden.", "Bij de eerste start wordt u gevraagd toestemming te geven of te weigeren voor <strong>gepersonaliseerde reclame</strong>. Bij weigering worden niet-gepersonaliseerde (contextuele) advertenties getoond. U kunt uw voorkeur op elk gewenst moment wijzigen via <strong>Instellingen → Privacy</strong>."], links: [{ label: "Google Privacybeleid", url: "https://policies.google.com/privacy" }, { label: "Gepersonaliseerde advertenties uitschakelen", url: "https://adssettings.google.com" }], noSell: "Wij verkopen uw persoonsgegevens niet aan derden." },
+                sharing: { heading: "Gegevensdeling &amp; Derden", intro: "Wij verkopen, ruilen of verhuren uw persoonlijke gegevens niet. Beperkte, geaggregeerde gegevens kunnen worden gedeeld met:", items: ["<strong>Google AdMob</strong> — voor advertentielevering en -meting.", "<strong>Wettelijke autoriteiten</strong> — wanneer vereist om te voldoen aan toepasselijke wet- en regelgeving of een rechtbankbevel."], note: "Alle externe diensten hebben hun eigen privacybeleid dat het gebruik van uw gegevens regelt." },
+                children: { heading: "Privacy van Kinderen", text: ["Sudoku 9 is niet gericht op kinderen onder de <strong>13 jaar</strong>. Wij verzamelen niet bewust persoonlijke gegevens van kinderen.", "Als u ouder of voogd bent en u denkt dat uw kind ons persoonlijke gegevens heeft verstrekt, neem dan contact met ons op via het onderstaande adres — wij verwijderen die informatie onmiddellijk.", "De app maakt geen gebruik van op kinderen gerichte advertentie-instellingen (COPPA) en is niet ingediend als app 'Ontworpen voor gezinnen'."] },
+                rights: { heading: "Uw Rechten (AVG &amp; US Privacy)", intro: "Afhankelijk van uw locatie kunt u de volgende rechten hebben:", items: ["<strong>Inzage:</strong> Een kopie opvragen van de persoonsgegevens die wij over u bewaren.", "<strong>Rectificatie:</strong> Correctie van onjuiste gegevens verzoeken.", "<strong>Verwijdering:</strong> Verwijdering van uw persoonsgegevens verzoeken.", "<strong>Beperking:</strong> Beperking van de verwerking verzoeken.", "<strong>Overdraagbaarheid:</strong> Uw gegevens in een gestructureerd, machineleesbaar formaat ontvangen.", "<strong>Bezwaar:</strong> Bezwaar maken tegen verwerking op basis van gerechtvaardigd belang.", "<strong>Toestemming intrekken:</strong> Uw toestemming voor reclame op elk gewenst moment in de app intrekken."], legal: "Voor EU/EER-gebruikers is onze rechtsbasis voor de verwerking van reclamegegevens uw <strong>uitdrukkelijke toestemming</strong>, verkregen via ons in-app toestemmingsscherm. Gebruikers in Amerikaanse staten met toepasselijke privacywetten (CCPA/CPRA, CDPA, CPA, enz.) kunnen zich op elk gewenst moment afmelden via de in-app instellingen. Neem contact met ons op om deze rechten uit te oefenen." },
+                security: { heading: "Beveiliging", text: ["Wij treffen redelijke technische en organisatorische maatregelen om de beperkte gegevens die wij verwerken te beschermen. Geen enkele methode van overdracht via internet of elektronische opslag is echter 100% veilig en wij kunnen geen absolute veiligheid garanderen."] },
+                changes: { heading: "Wijzigingen van Dit Beleid", text: ["Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Wanneer wij dat doen, zullen wij de datum 'Laatste update' bovenaan deze pagina herzien. Wij raden u aan dit beleid regelmatig te bekijken.", "Voortgezet gebruik van Sudoku 9 na publicatie van wijzigingen geldt als aanvaarding van het bijgewerkte beleid."] },
+                contact: { heading: "Contact", pre: "Voor vragen of verzoeken met betrekking tot dit Privacybeleid:", sub: "Hexlume Games &nbsp;·&nbsp; Onafhankelijke game-ontwikkelaar" }
+            },
+
+            /* ── POLSKI (düzeltilmiş) ── */
+            pl: {
+                label: "🇵🇱 Polski", dir: "ltr", title: "Polityka Prywatności",
+                overview: { badge: "Przegląd", text: ["Hexlume Games („my\") stworzyło <strong>Sudoku 9</strong> jako bezpłatną aplikację mobilną. Niniejsza Polityka prywatności wyjaśnia, jakie informacje zbieramy, jak je wykorzystujemy i jakie masz możliwości wyboru.", "Pobierając lub używając Sudoku 9, akceptujesz niniejszą politykę. Jeśli się nie zgadzasz, prosimy o zaprzestanie korzystania z aplikacji."] },
+                collection: { heading: "Zbierane Informacje", intro: "Zbieramy następujące rodzaje informacji:", items: ["<strong>Dane urządzenia i techniczne:</strong> Model urządzenia, wersja systemu operacyjnego, wersja aplikacji, język i ogólna lokalizacja (kraj/region). Zbierane automatycznie przez naszych partnerów reklamowych i analitycznych.", "<strong>Dane użytkowania:</strong> Rozegrane sesje, wybrane poziomy trudności i interakcje z funkcjami — wyłącznie w celu poprawy doświadczenia w grze.", "<strong>Identyfikatory reklamowe:</strong> Za Twoją zgodą Google AdMob może zbierać identyfikatory reklamowe w celu wyświetlania spersonalizowanych reklam.", "<strong>Postęp gry (tylko lokalnie):</strong> Twój postęp, statystyki i ustawienia są przechowywane wyłącznie na Twoim urządzeniu poprzez <code>localStorage</code>. Nie przesyłamy tych danych na żaden serwer."], outro: "<strong>Nie</strong> zbieramy Twojego imienia i nazwiska, adresu e-mail, numeru telefonu, dokładnej lokalizacji GPS ani żadnych innych bezpośrednio identyfikujących informacji." },
+                usage: { heading: "Wykorzystanie Informacji", items: ["Wyświetlanie reklam za pośrednictwem Google AdMob (banery, reklamy pełnoekranowe i reklamy wideo z nagrodą).", "Monitorowanie stabilności aplikacji i diagnozowanie problemów technicznych poprzez raporty o awariach.", "Analiza zagregowanych wzorców rozgrywki w celu ulepszenia przyszłych funkcji gry.", "Spełnianie zobowiązań prawnych."] },
+                advertising: { heading: "Reklama &amp; Google AdMob", text: ["Sudoku 9 używa <strong>Google AdMob</strong> do wyświetlania reklam. AdMob może zbierać i przetwarzać dane zgodnie z własną Polityką prywatności i Warunkami korzystania z usług Google.", "Przy pierwszym uruchomieniu zostaniesz poproszony o wyrażenie lub odmowę zgody na <strong>spersonalizowane reklamy</strong>. W przypadku odmowy wyświetlane będą reklamy niespersonalizowane (kontekstowe). Możesz zmienić preferencje w dowolnym momencie w <strong>Ustawienia → Prywatność</strong>."], links: [{ label: "Polityka prywatności Google", url: "https://policies.google.com/privacy" }, { label: "Rezygnacja ze spersonalizowanych reklam", url: "https://adssettings.google.com" }], noSell: "Nie sprzedajemy Twoich danych osobowych żadnym stronom trzecim." },
+                sharing: { heading: "Udostępnianie Danych i Strony Trzecie", intro: "Nie sprzedajemy, nie wymieniamy ani nie wynajmujemy Twoich danych osobowych. Ograniczone, zagregowane dane mogą być udostępniane:", items: ["<strong>Google AdMob</strong> — w celu dostarczania i pomiaru reklam.", "<strong>Organom prawnym</strong> — gdy jest to wymagane do przestrzegania obowiązującego prawa, nakazu sądowego lub przepisów rządowych."], note: "Wszystkie usługi stron trzecich mają własne polityki prywatności regulujące korzystanie z Twoich danych." },
+                children: { heading: "Prywatność Dzieci", text: ["Sudoku 9 nie jest skierowane do dzieci poniżej <strong>13 roku życia</strong>. Nie zbieramy świadomie danych osobowych dzieci.", "Jeśli jesteś rodzicem lub opiekunem i uważasz, że Twoje dziecko przekazało nam dane osobowe, skontaktuj się z nami pod adresem poniżej — niezwłocznie usuniemy te informacje.", "Aplikacja nie używa ustawień reklam skierowanych do dzieci (COPPA) i nie została zgłoszona jako aplikacja 'Przeznaczona dla rodzin'."] },
+                rights: { heading: "Twoje Prawa (RODO i Prywatność Stanów USA)", intro: "W zależności od Twojej lokalizacji możesz mieć następujące prawa:", items: ["<strong>Dostęp:</strong> Żądanie kopii danych osobowych, które przechowujemy.", "<strong>Sprostowanie:</strong> Żądanie poprawienia niedokładnych danych.", "<strong>Usunięcie:</strong> Żądanie usunięcia Twoich danych osobowych.", "<strong>Ograniczenie:</strong> Żądanie ograniczenia sposobu korzystania z Twoich danych.", "<strong>Przenoszenie:</strong> Otrzymanie danych w ustrukturyzowanym, nadającym się do odczytu maszynowego formacie.", "<strong>Sprzeciw:</strong> Sprzeciw wobec przetwarzania na podstawie uzasadnionego interesu.", "<strong>Cofnięcie zgody:</strong> Cofnięcie zgody reklamowej w dowolnym momencie w aplikacji."], legal: "Dla użytkowników UE/EOG podstawą prawną przetwarzania danych reklamowych jest Twoja <strong>wyraźna zgoda</strong> uzyskana za pośrednictwem ekranu zgody w aplikacji. Użytkownicy w stanach USA z obowiązującymi przepisami dotyczącymi prywatności (CCPA/CPRA, CDPA, CPA itp.) mogą w dowolnym momencie zrezygnować ze sprzedaży lub udostępniania danych osobowych za pośrednictwem ustawień zgody w aplikacji. Skontaktuj się z nami, aby skorzystać z tych praw." },
+                security: { heading: "Bezpieczeństwo", text: ["Wdrażamy rozsądne środki techniczne i organizacyjne w celu ochrony ograniczonej ilości danych, które przetwarzamy. Jednak żadna metoda transmisji przez internet ani elektronicznego przechowywania danych nie jest w 100% bezpieczna i nie możemy zagwarantować absolutnego bezpieczeństwa."] },
+                changes: { heading: "Zmiany tej Polityki", text: ["Możemy od czasu do czasu aktualizować niniejszą Politykę prywatności. Zaktualizujemy datę 'Ostatnia aktualizacja' u góry tej strony. Zachęcamy do okresowego przeglądania tej polityki.", "Dalsze korzystanie z Sudoku 9 po opublikowaniu zmian oznacza akceptację zaktualizowanej polityki."] },
+                contact: { heading: "Kontakt", pre: "W przypadku pytań lub próśb dotyczących niniejszej Polityki prywatności:", sub: "Hexlume Games &nbsp;·&nbsp; Niezależny deweloper gier" }
+            },
+
+            /* ── SVENSKA ── */
+            sv: {
+                label: "🇸🇪 Svenska", dir: "ltr", title: "Integritetspolicy",
+                overview: { badge: "Översikt", text: ["Hexlume Games ('vi') har utvecklat <strong>Sudoku 9</strong> som en gratis mobilapplikation. Denna integritetspolicy förklarar vilken information vi samlar in, hur vi använder den och vilka val du har.", "Genom att ladda ner eller använda Sudoku 9 godkänner du denna policy. Om du inte godkänner, vänligen avsluta användningen av appen."] },
+                collection: { heading: "Information vi Samlar In", intro: "Vi samlar in följande typer av information:", items: ["<strong>Enhets- och teknisk data:</strong> Enhetsmodell, OS-version, appversion, språk och ungefärlig plats (land/region). Samlas automatiskt in via våra reklam- och analyspartners.", "<strong>Användningsdata:</strong> Spelade sessioner, valda svårighetsgrader och funktionsinteraktioner — enbart för att förbättra spelupplevelsen.", "<strong>Reklam-ID:n:</strong> Med ditt samtycke kan Google AdMob samla in reklam-ID:n för att visa personaliserade annonser.", "<strong>Spelframsteg (endast lokalt):</strong> Dina framsteg, statistik och inställningar lagras enbart på din enhet via <code>localStorage</code>. Vi skickar inte denna data till någon server."], outro: "Vi samlar <strong>inte</strong> in ditt namn, e-postadress, telefonnummer, exakta GPS-position eller annan direkt identifierbar information." },
+                usage: { heading: "Hur vi Använder Information", items: ["Visa reklam via Google AdMob (banner-, interstitial- och belönade videoannonser).", "Övervaka appstabilitet och diagnostisera tekniska problem via kraschrapporter.", "Analysera aggregerade spelmönster för att förbättra framtida funktioner.", "Efterleva rättsliga skyldigheter."] },
+                advertising: { heading: "Reklam &amp; Google AdMob", text: ["Sudoku 9 använder <strong>Google AdMob</strong> för att visa reklam. AdMob kan samla in och bearbeta data i enlighet med Googles egna integritetspolicy och användarvillkor.", "Vid första start ombeds du ge eller neka samtycke till <strong>personaliserad reklam</strong>. Om du nekar visas istället icke-personaliserade (kontextuella) annonser. Du kan ändra din inställning när som helst under <strong>Inställningar → Integritet</strong>."], links: [{ label: "Googles integritetspolicy", url: "https://policies.google.com/privacy" }, { label: "Avanmäl personaliserade annonser", url: "https://adssettings.google.com" }], noSell: "Vi säljer inte dina personuppgifter till tredje part." },
+                sharing: { heading: "Datadelning &amp; Tredje Parter", intro: "Vi säljer, byter eller hyr inte ut din personliga information. Begränsad, aggregerad data kan delas med:", items: ["<strong>Google AdMob</strong> — för annonsutleverans och mätning.", "<strong>Rättsliga myndigheter</strong> — när det krävs för att följa tillämplig lag, domstolsbeslut eller myndighetsreglering."], note: "Alla tredjepartstjänster har egna integritetspolicyer som styr användningen av dina uppgifter." },
+                children: { heading: "Barns Integritet", text: ["Sudoku 9 riktar sig inte till barn under <strong>13 år</strong>. Vi samlar inte medvetet in personuppgifter från barn.", "Om du är förälder eller vårdnadshavare och tror att ditt barn har lämnat personuppgifter till oss, kontakta oss på adressen nedan — vi raderar omedelbart den informationen.", "Appen använder inte barnriktade annonsinställningar (COPPA) och har inte skickats in som en app 'Designad för familjer'."] },
+                rights: { heading: "Dina Rättigheter (GDPR &amp; US Integritet)", intro: "Beroende på din plats kan du ha följande rättigheter:", items: ["<strong>Tillgång:</strong> Begära en kopia av de personuppgifter vi har om dig.", "<strong>Rättelse:</strong> Begära rättelse av felaktiga uppgifter.", "<strong>Radering:</strong> Begära radering av dina personuppgifter.", "<strong>Begränsning:</strong> Begära att vi begränsar hur vi använder dina data.", "<strong>Dataportabilitet:</strong> Ta emot dina data i ett strukturerat, maskinläsbart format.", "<strong>Invändning:</strong> Invända mot behandling baserad på berättigat intresse.", "<strong>Återkalla samtycke:</strong> Återkalla ditt reklamsamtycke när som helst i appen."], legal: "För EU/EES-användare är vår rättsliga grund för behandling av reklamdata ditt <strong>uttryckliga samtycke</strong> som inhämtas via vår samtycksskärm i appen. Användare i amerikanska delstater med tillämpliga integritetslagar (CCPA/CPRA, CDPA, CPA m.fl.) kan när som helst avanmäla sig från försäljning eller delning av personuppgifter via appens samtycksinställningar. Kontakta oss för att utöva dessa rättigheter." },
+                security: { heading: "Säkerhet", text: ["Vi implementerar rimliga tekniska och organisatoriska åtgärder för att skydda den begränsade data vi behandlar. Ingen metod för överföring via internet eller elektronisk lagring är dock 100% säker och vi kan inte garantera absolut säkerhet."] },
+                changes: { heading: "Ändringar av Denna Policy", text: ["Vi kan uppdatera denna integritetspolicy från tid till annan. Datumet för 'Senast uppdaterad' revideras vid ändringar. Vi uppmuntrar dig att regelbundet granska denna policy.", "Fortsatt användning av Sudoku 9 efter publicerade ändringar innebär att du godkänner den uppdaterade policyn."] },
+                contact: { heading: "Kontakta Oss", pre: "För frågor eller förfrågningar angående denna integritetspolicy:", sub: "Hexlume Games &nbsp;·&nbsp; Oberoende spelutvecklare" }
+            },
+
+            /* ── NORSK ── */
+            no: {
+                label: "🇳🇴 Norsk", dir: "ltr", title: "Personvernerklæring",
+                overview: { badge: "Oversikt", text: ["Hexlume Games («vi») har utviklet <strong>Sudoku 9</strong> som en gratis mobilapplikasjon. Denne personvernerklæringen forklarer hvilken informasjon vi samler inn, hvordan vi bruker den og hvilke valg du har.", "Ved å laste ned eller bruke Sudoku 9 samtykker du til denne erklæringen. Hvis du ikke samtykker, ber vi deg om å slutte å bruke appen."] },
+                collection: { heading: "Informasjon vi Samler Inn", intro: "Vi samler inn følgende typer informasjon:", items: ["<strong>Enhets- og tekniske data:</strong> Enhetsmodell, OS-versjon, appversjon, språk og omtrentlig plassering (land/region). Samles automatisk inn via våre reklame- og analysepartnere.", "<strong>Bruksdata:</strong> Spilte sesjoner, valgte vanskelighetsgrader og funksjonsinteraksjoner — kun for å forbedre spillopplevelsen.", "<strong>Reklame-ID-er:</strong> Med ditt samtykke kan Google AdMob samle inn reklame-ID-er for å vise personaliserte annonser.", "<strong>Spillfremgang (kun lokalt):</strong> Din fremgang, statistikk og innstillinger lagres kun på enheten din via <code>localStorage</code>. Vi sender ikke disse dataene til noen server."], outro: "Vi samler <strong>ikke</strong> inn navn, e-postadresse, telefonnummer, nøyaktig GPS-posisjon eller annen direkte identifiserbar informasjon." },
+                usage: { heading: "Bruk av Informasjon", items: ["Vise reklame via Google AdMob (banner-, interstitial- og belønnet videoreklame).", "Overvåke appstabilitet og diagnostisere tekniske problemer via krasjrapporter.", "Analysere aggregerte spillmønstre for å forbedre fremtidige funksjoner.", "Overholde juridiske forpliktelser."] },
+                advertising: { heading: "Reklame &amp; Google AdMob", text: ["Sudoku 9 bruker <strong>Google AdMob</strong> for å vise reklame. AdMob kan samle inn og behandle data i samsvar med Googles egne personvernerklæring og tjenestevilkår.", "Ved første oppstart vil du bli bedt om å gi eller nekte samtykke til <strong>personalisert reklame</strong>. Nekter du, vises ikke-personaliserte (kontekstuelle) annonser i stedet. Du kan endre preferansen din når som helst under <strong>Innstillinger → Personvern</strong>."], links: [{ label: "Googles personvernerklæring", url: "https://policies.google.com/privacy" }, { label: "Avslutt personaliserte annonser", url: "https://adssettings.google.com" }], noSell: "Vi selger ikke dine personopplysninger til tredjeparter." },
+                sharing: { heading: "Datadeling og Tredjeparter", intro: "Vi selger, bytter eller leier ikke ut din personlige informasjon. Begrensede, aggregerte data kan deles med:", items: ["<strong>Google AdMob</strong> — for annonselevering og -måling.", "<strong>Juridiske myndigheter</strong> — når det er nødvendig for å overholde gjeldende lov, rettslig kjennelse eller offentlig regulering."], note: "Alle tredjepartstjenester har egne personvernerklæringer som regulerer bruken av dine data." },
+                children: { heading: "Barns Personvern", text: ["Sudoku 9 er ikke rettet mot barn under <strong>13 år</strong>. Vi samler ikke bevisst inn personopplysninger fra barn.", "Hvis du er forelder eller foresatt og tror at ditt barn har gitt oss personopplysninger, kontakt oss på adressen nedenfor — vi vil umiddelbart slette den informasjonen.", "Appen bruker ikke barnrettede annonseinnstillinger (COPPA) og er ikke sendt inn som en app 'Designet for familier'."] },
+                rights: { heading: "Dine Rettigheter (GDPR og US Personvern)", intro: "Avhengig av din plassering kan du ha følgende rettigheter:", items: ["<strong>Innsyn:</strong> Be om en kopi av personopplysningene vi har om deg.", "<strong>Retting:</strong> Be om retting av unøyaktige data.", "<strong>Sletting:</strong> Be om sletting av dine personopplysninger.", "<strong>Begrensning:</strong> Be om at vi begrenser bruken av dine data.", "<strong>Dataportabilitet:</strong> Motta dine data i et strukturert, maskinlesbart format.", "<strong>Innsigelse:</strong> Protestere mot behandling basert på berettiget interesse.", "<strong>Trekke tilbake samtykke:</strong> Trekke tilbake ditt reklamsamtykke når som helst i appen."], legal: "For EU/EØS-brukere er vårt rettslige grunnlag for behandling av reklamedata ditt <strong>uttrykkelige samtykke</strong> innhentet via vår samtykkeskjerm i appen. Brukere i amerikanske stater med gjeldende personvernlover (CCPA/CPRA, CDPA, CPA osv.) kan når som helst reservere seg mot salg eller deling av personopplysninger via appens samtykkeinnstillinger. Kontakt oss for å utøve disse rettighetene." },
+                security: { heading: "Sikkerhet", text: ["Vi implementerer rimelige tekniske og organisatoriske tiltak for å beskytte de begrensede dataene vi behandler. Ingen overføringsmetode over internett eller elektronisk lagring er imidlertid 100% sikker, og vi kan ikke garantere absolutt sikkerhet."] },
+                changes: { heading: "Endringer i Denne Erklæringen", text: ["Vi kan oppdatere denne personvernerklæringen fra tid til annen. Datoen for 'Sist oppdatert' vil bli revidert ved endringer. Vi oppfordrer deg til å gjennomgå denne erklæringen jevnlig.", "Fortsatt bruk av Sudoku 9 etter publiserte endringer utgjør din aksept av den oppdaterte erklæringen."] },
+                contact: { heading: "Kontakt Oss", pre: "For spørsmål eller forespørsler angående denne personvernerklæringen:", sub: "Hexlume Games &nbsp;·&nbsp; Uavhengig spillutvikler" }
+            },
+
+            /* ── DANSK ── */
+            da: {
+                label: "🇩🇰 Dansk", dir: "ltr", title: "Privatlivspolitik",
+                overview: { badge: "Oversigt", text: ["Hexlume Games ('vi') har udviklet <strong>Sudoku 9</strong> som en gratis mobilapplikation. Denne privatlivspolitik forklarer, hvilke oplysninger vi indsamler, hvordan vi bruger dem, og hvilke valg du har.", "Ved at downloade eller bruge Sudoku 9 accepterer du denne politik. Hvis du ikke er enig, bedes du stoppe med at bruge appen."] },
+                collection: { heading: "Oplysninger vi Indsamler", intro: "Vi indsamler følgende typer oplysninger:", items: ["<strong>Enheds- og tekniske data:</strong> Enhedsmodel, OS-version, appversion, sprog og omtrentlig placering (land/region). Indsamles automatisk via vores reklame- og analysepartnere.", "<strong>Brugsdata:</strong> Spillede sessioner, valgte sværhedsgrader og funktionsinteraktioner — udelukkende for at forbedre spiloplevelsen.", "<strong>Reklame-ID'er:</strong> Med dit samtykke kan Google AdMob indsamle reklame-ID'er til visning af personaliserede annoncer.", "<strong>Spilforløb (kun lokalt):</strong> Din fremgang, statistik og indstillinger gemmes udelukkende på din enhed via <code>localStorage</code>. Vi sender ikke disse data til nogen server."], outro: "Vi indsamler <strong>ikke</strong> dit navn, e-mailadresse, telefonnummer, præcis GPS-placering eller andre direkte identificerbare oplysninger." },
+                usage: { heading: "Brug af Oplysninger", items: ["Vise reklamer via Google AdMob (banner-, interstitial- og belønnede videoannoncer).", "Overvåge appstabilitet og diagnosticere tekniske problemer via nedbrudrapporter.", "Analysere aggregerede spilmønstre for at forbedre fremtidige funktioner.", "Overholde juridiske forpligtelser."] },
+                advertising: { heading: "Reklame &amp; Google AdMob", text: ["Sudoku 9 bruger <strong>Google AdMob</strong> til at vise reklamer. AdMob kan indsamle og behandle data i overensstemmelse med Googles egne privatlivspolitik og servicevilkår.", "Ved første start bliver du bedt om at give eller nægte samtykke til <strong>personaliseret reklame</strong>. Nægter du, vises ikke-personaliserede (kontekstuelle) annoncer i stedet. Du kan ændre din præference til enhver tid under <strong>Indstillinger → Privatliv</strong>."], links: [{ label: "Googles privatlivspolitik", url: "https://policies.google.com/privacy" }, { label: "Fravælg personaliserede annoncer", url: "https://adssettings.google.com" }], noSell: "Vi sælger ikke dine personoplysninger til tredjeparter." },
+                sharing: { heading: "Datadeling &amp; Tredjeparter", intro: "Vi sælger, bytter eller udlejer ikke dine personlige oplysninger. Begrænsede, aggregerede data kan deles med:", items: ["<strong>Google AdMob</strong> — til annoncering og måling.", "<strong>Juridiske myndigheder</strong> — når det er nødvendigt for at overholde gældende lovgivning, retsafgørelse eller offentlig regulering."], note: "Alle tredjepartstjenester har egne privatlivspolitikker, der regulerer brugen af dine data." },
+                children: { heading: "Børns Privatliv", text: ["Sudoku 9 er ikke rettet mod børn under <strong>13 år</strong>. Vi indsamler ikke bevidst personoplysninger fra børn.", "Hvis du er forælder eller værge og mener, at dit barn har givet os personoplysninger, bedes du kontakte os på adressen nedenfor — vi sletter straks disse oplysninger.", "Appen anvender ikke børnerettede annonceindstillinger (COPPA) og er ikke indsendt som en app 'Designet til familier'."] },
+                rights: { heading: "Dine Rettigheder (GDPR &amp; US Privatliv)", intro: "Afhængigt af din placering kan du have følgende rettigheder:", items: ["<strong>Indsigt:</strong> Anmode om en kopi af de personoplysninger, vi har om dig.", "<strong>Berigtigelse:</strong> Anmode om berigtigelse af unøjagtige data.", "<strong>Sletning:</strong> Anmode om sletning af dine personoplysninger.", "<strong>Begrænsning:</strong> Anmode om, at vi begrænser brugen af dine data.", "<strong>Dataportabilitet:</strong> Modtage dine data i et struktureret, maskinlæsbart format.", "<strong>Indsigelse:</strong> Gøre indsigelse mod behandling baseret på legitim interesse.", "<strong>Tilbagekaldelse af samtykke:</strong> Tilbagekalde dit reklamesamtykke til enhver tid i appen."], legal: "For EU/EØS-brugere er vores retsgrundlag for behandling af reklamedata dit <strong>udtrykkelige samtykke</strong>, som indhentes via vores samtykkeskærm i appen. Brugere i amerikanske stater med gældende privatlivslove (CCPA/CPRA, CDPA, CPA mv.) kan til enhver tid fravælge salg eller deling af personoplysninger via appens samtykkeindstillinger. Kontakt os for at udøve disse rettigheder." },
+                security: { heading: "Sikkerhed", text: ["Vi implementerer rimelige tekniske og organisatoriske foranstaltninger for at beskytte de begrænsede data, vi behandler. Ingen transmissionsmetode over internettet eller elektronisk lagring er dog 100% sikker, og vi kan ikke garantere absolut sikkerhed."] },
+                changes: { heading: "Ændringer af Denne Politik", text: ["Vi kan opdatere denne privatlivspolitik fra tid til anden. Datoen for 'Sidst opdateret' vil blive revideret ved ændringer. Vi opfordrer dig til jævnligt at gennemgå denne politik.", "Fortsat brug af Sudoku 9 efter offentliggjorte ændringer udgør din accept af den opdaterede politik."] },
+                contact: { heading: "Kontakt Os", pre: "For spørgsmål eller anmodninger vedrørende denne privatlivspolitik:", sub: "Hexlume Games &nbsp;·&nbsp; Uafhængig spiludvikler" }
+            },
+
+            /* ── SUOMI ── */
+            fi: {
+                label: "🇫🇮 Suomi", dir: "ltr", title: "Tietosuojakäytäntö",
+                overview: { badge: "Yleiskatsaus", text: ["Hexlume Games ('me') on kehittänyt <strong>Sudoku 9</strong> -sovelluksen ilmaiseksi mobiilipelaksi. Tämä tietosuojakäytäntö selittää, mitä tietoja keräämme, miten niitä käytämme ja mitkä ovat valintasi.", "Lataamalla tai käyttämällä Sudoku 9 -sovellusta hyväksyt tämän käytännön. Jos et hyväksy, lopeta sovelluksen käyttö."] },
+                collection: { heading: "Kerättävät Tiedot", intro: "Keräämme seuraavia tietotyyppejä:", items: ["<strong>Laite- ja tekniset tiedot:</strong> Laitemalli, käyttöjärjestelmäversio, sovellusversio, kieli ja yleinen sijainti (maa/alue). Kerätään automaattisesti mainonta- ja analytiikkakumppaneidemme kautta.", "<strong>Käyttötiedot:</strong> Pelatut istunnot, valitut vaikeustasomuutokset ja toimintojen käyttö — ainoastaan pelikokemuksen parantamiseen.", "<strong>Mainostunnisteet:</strong> Suostumuksellasi Google AdMob voi kerätä mainostunnisteita personoitujen mainosten näyttämiseksi.", "<strong>Peliedistyminen (vain paikallinen):</strong> Edistymisesi, tilastosi ja asetuksesi tallennetaan ainoastaan laitteellesi <code>localStorage</code>-teknologialla. Emme lähetä näitä tietoja millekään palvelimelle."], outro: "Emme kerää <strong>nimeäsi, sähköpostiosoitettasi, puhelinnumeroasi, tarkkaa GPS-sijaintiasi</strong> tai muita suoraan tunnistavia henkilötietoja." },
+                usage: { heading: "Tietojen Käyttö", items: ["Mainosten näyttäminen Google AdMobin kautta (bannerimainokset, interstitiaali- ja palkitut videomainokset).", "Sovelluksen vakauden seuranta ja teknisten ongelmien diagnosointi kaatumisraporttien avulla.", "Yhdistettyjen pelimallien analysointi tulevien ominaisuuksien parantamiseksi.", "Lakisääteisten velvoitteiden täyttäminen."] },
+                advertising: { heading: "Mainonta &amp; Google AdMob", text: ["Sudoku 9 käyttää <strong>Google AdMobia</strong> mainosten näyttämiseen. AdMob voi kerätä ja käsitellä tietoja Googlen oman tietosuojakäytännön ja käyttöehtojen mukaisesti.", "Ensimmäisellä käynnistyskerralla sinulta pyydetään suostumus tai kieltäytyminen <strong>personoituihin mainoksiin</strong>. Jos kieltäydyt, näytetään personoimattomia (kontekstuaalisia) mainoksia. Voit muuttaa asetusta milloin tahansa kohdasta <strong>Asetukset → Tietosuoja</strong>."], links: [{ label: "Googlen tietosuojakäytäntö", url: "https://policies.google.com/privacy" }, { label: "Kieltäydy personoiduista mainoksista", url: "https://adssettings.google.com" }], noSell: "Emme myy henkilötietojasi kolmansille osapuolille." },
+                sharing: { heading: "Tietojen Jakaminen ja Kolmannet Osapuolet", intro: "Emme myy, vaihda tai vuokraa henkilötietojasi. Rajattua, yhdistettyä tietoa voidaan jakaa:", items: ["<strong>Google AdMob</strong> — mainosten toimittaminen ja mittaaminen.", "<strong>Oikeusviranomaiset</strong> — kun se on tarpeen sovellettavan lain, tuomioistuimen määräyksen tai viranomaismääräyksen noudattamiseksi."], note: "Kaikilla kolmansien osapuolten palveluilla on omat tietosuojakäytäntönsä, jotka säätelevät tietojesi käyttöä." },
+                children: { heading: "Lasten Tietosuoja", text: ["Sudoku 9 ei ole tarkoitettu alle <strong>13-vuotiaille</strong> lapsille. Emme tietoisesti kerää lasten henkilötietoja.", "Jos olet vanhempi tai huoltaja ja uskot lapsesi antaneen meille henkilötietoja, ota meihin yhteyttä alla olevaan osoitteeseen — poistamme tiedot välittömästi.", "Sovellus ei käytä lapsille suunnattuja mainosasetuksia (COPPA) eikä sitä ole lähetetty 'Perheille suunniteltuna' sovelluksena."] },
+                rights: { heading: "Oikeutesi (GDPR ja Yhdysvaltojen osavaltioiden tietosuoja)", intro: "Sijaintisi mukaan sinulla voi olla seuraavat oikeudet:", items: ["<strong>Pääsy:</strong> Pyytää kopion meillä olevista henkilötiedoistasi.", "<strong>Oikaisu:</strong> Pyytää virheellisten tietojen oikaisemista.", "<strong>Poistaminen:</strong> Pyytää henkilötietojesi poistamista.", "<strong>Rajoittaminen:</strong> Pyytää tietojesi käytön rajoittamista.", "<strong>Siirrettävyys:</strong> Vastaanottaa tietosi jäsennellyssä, koneellisesti luettavassa muodossa.", "<strong>Vastalause:</strong> Vastustaa oikeutettuun etuun perustuvaa käsittelyä.", "<strong>Suostumuksen peruuttaminen:</strong> Peruuttaa mainontasuostumuksesi milloin tahansa sovelluksessa."], legal: "EU/ETA-käyttäjille mainostietojen käsittelyn oikeusperusta on sovellusten sisäisen suostumusnäytön kautta saatu <strong>nimenomainen suostumuksesi</strong>. Sovellettavien tietosuojalakien (CCPA/CPRA, CDPA, CPA jne.) alaisten Yhdysvaltojen osavaltioiden käyttäjät voivat kieltäytyä henkilötietojen myynnistä tai jakamisesta milloin tahansa sovellusten suostumuksenasetuksissa. Ota meihin yhteyttä käyttääksesi näitä oikeuksia." },
+                security: { heading: "Tietoturva", text: ["Toteutamme kohtuullisia teknisiä ja organisatorisia toimenpiteitä käsittelemiemme rajattujen tietojen suojaamiseksi. Mikään tiedonsiirtomenetelmä internetin kautta tai sähköinen tallennus ei ole kuitenkaan 100-prosenttisesti turvallista, emmekä voi taata ehdotonta turvallisuutta."] },
+                changes: { heading: "Muutokset Tähän Käytäntöön", text: ["Saatamme päivittää tätä tietosuojakäytäntöä ajoittain. Päivityksen yhteydessä muutamme sivun yläosassa olevaa 'Viimeksi päivitetty' -päivämäärää. Suosittelemme tarkistamaan käytännön säännöllisesti.", "Sudoku 9:n jatkaminen muutosten julkaisemisen jälkeen merkitsee hyväksyntää päivitettyyn käytäntöön."] },
+                contact: { heading: "Ota Yhteyttä", pre: "Tähän tietosuojakäytäntöön liittyviä kysymyksiä tai pyyntöjä varten:", sub: "Hexlume Games &nbsp;·&nbsp; Itsenäinen pelikehittäjä" }
+            },
+
+            /* ── INDONESIA ── */
+            id: {
+                label: "🇮🇩 Indonesia", dir: "ltr", title: "Kebijakan Privasi",
+                overview: { badge: "Ikhtisar", text: ["Hexlume Games ('kami') mengembangkan <strong>Sudoku 9</strong> sebagai aplikasi seluler gratis. Kebijakan Privasi ini menjelaskan informasi yang kami kumpulkan, cara kami menggunakannya, dan pilihan yang tersedia bagi Anda.", "Dengan mengunduh atau menggunakan Sudoku 9, Anda menyetujui kebijakan ini. Jika tidak setuju, harap berhenti menggunakan aplikasi."] },
+                collection: { heading: "Informasi yang Kami Kumpulkan", intro: "Kami mengumpulkan jenis informasi berikut:", items: ["<strong>Data perangkat dan teknis:</strong> Model perangkat, versi OS, versi aplikasi, bahasa, dan lokasi umum (negara/wilayah). Dikumpulkan secara otomatis melalui mitra periklanan dan analitik kami.", "<strong>Data penggunaan:</strong> Sesi yang dimainkan, tingkat kesulitan yang dipilih, dan interaksi fitur — hanya untuk meningkatkan pengalaman bermain.", "<strong>Pengidentifikasi iklan:</strong> Dengan persetujuan Anda, Google AdMob dapat mengumpulkan pengidentifikasi iklan untuk menampilkan iklan yang dipersonalisasi.", "<strong>Kemajuan game (lokal saja):</strong> Kemajuan puzzle, statistik, dan pengaturan Anda disimpan hanya di perangkat Anda melalui <code>localStorage</code>. Kami tidak mengirimkan data ini ke server mana pun."], outro: "Kami <strong>tidak</strong> mengumpulkan nama, alamat email, nomor telepon, lokasi GPS yang tepat, atau informasi yang dapat mengidentifikasi Anda secara langsung." },
+                usage: { heading: "Cara Kami Menggunakan Informasi", items: ["Menampilkan iklan melalui Google AdMob (iklan banner, interstitial, dan video reward).", "Memantau stabilitas aplikasi dan mendiagnosis masalah teknis melalui laporan crash.", "Menganalisis pola gameplay agregat untuk meningkatkan fitur game di masa mendatang.", "Mematuhi kewajiban hukum."] },
+                advertising: { heading: "Iklan &amp; Google AdMob", text: ["Sudoku 9 menggunakan <strong>Google AdMob</strong> untuk menampilkan iklan. AdMob dapat mengumpulkan dan memproses data sesuai dengan Kebijakan Privasi dan Ketentuan Layanannya sendiri.", "Saat pertama kali diluncurkan, Anda akan diminta memberikan atau menolak persetujuan untuk <strong>iklan yang dipersonalisasi</strong>. Jika menolak, iklan tidak dipersonalisasi (kontekstual) akan ditampilkan. Anda dapat mengubah preferensi kapan saja di <strong>Pengaturan → Privasi</strong>."], links: [{ label: "Kebijakan Privasi Google", url: "https://policies.google.com/privacy" }, { label: "Tolak iklan yang dipersonalisasi", url: "https://adssettings.google.com" }], noSell: "Kami tidak menjual data pribadi Anda kepada pihak ketiga mana pun." },
+                sharing: { heading: "Berbagi Data &amp; Pihak Ketiga", intro: "Kami tidak menjual, memperdagangkan, atau menyewakan informasi pribadi Anda. Data agregat terbatas dapat dibagikan kepada:", items: ["<strong>Google AdMob</strong> — untuk penayangan dan pengukuran iklan.", "<strong>Otoritas hukum</strong> — jika diperlukan untuk mematuhi hukum yang berlaku, perintah pengadilan, atau peraturan pemerintah."], note: "Semua layanan pihak ketiga memiliki kebijakan privasi mereka sendiri yang mengatur penggunaan data Anda." },
+                children: { heading: "Privasi Anak", text: ["Sudoku 9 tidak ditujukan kepada anak-anak di bawah usia <strong>13 tahun</strong>. Kami tidak sengaja mengumpulkan informasi pribadi dari anak-anak.", "Jika Anda orang tua atau wali dan percaya anak Anda telah memberikan data pribadi kepada kami, hubungi kami di alamat di bawah ini — kami akan segera menghapus informasi tersebut.", "Aplikasi tidak menggunakan pengaturan iklan yang ditujukan untuk anak (COPPA) dan tidak diajukan sebagai aplikasi 'Dirancang untuk Keluarga'."] },
+                rights: { heading: "Hak Anda (GDPR &amp; Privacidade Negara Bagian AS)", intro: "Tergantung lokasi Anda, Anda mungkin memiliki hak berikut:", items: ["<strong>Akses:</strong> Meminta salinan data pribadi yang kami miliki tentang Anda.", "<strong>Koreksi:</strong> Meminta koreksi data yang tidak akurat.", "<strong>Penghapusan:</strong> Meminta penghapusan data pribadi Anda.", "<strong>Pembatasan:</strong> Meminta kami membatasi cara kami menggunakan data Anda.", "<strong>Portabilitas:</strong> Menerima data Anda dalam format terstruktur yang dapat dibaca mesin.", "<strong>Keberatan:</strong> Mengajukan keberatan atas pemrosesan berdasarkan kepentingan sah.", "<strong>Tarik Persetujuan:</strong> Menarik persetujuan iklan Anda kapan saja di aplikasi."], legal: "Untuk pengguna UE/EEA, dasar hukum pemrosesan data periklanan adalah <strong>persetujuan eksplisit</strong> Anda yang diperoleh melalui layar persetujuan dalam aplikasi. Pengguna di negara bagian AS dengan undang-undang privasi yang berlaku (CCPA/CPRA, CDPA, CPA, dll.) dapat memilih keluar dari penjualan atau pembagian informasi pribadi kapan saja melalui pengaturan persetujuan dalam aplikasi. Hubungi kami untuk menggunakan hak-hak ini." },
+                security: { heading: "Keamanan", text: ["Kami menerapkan langkah-langkah teknis dan organisasi yang wajar untuk melindungi data terbatas yang kami proses. Namun, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang 100% aman, dan kami tidak dapat menjamin keamanan absolut."] },
+                changes: { heading: "Perubahan pada Kebijakan Ini", text: ["Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Tanggal 'Terakhir Diperbarui' akan direvisi sesuai perubahan. Kami menganjurkan Anda untuk meninjau kebijakan ini secara berkala.", "Penggunaan Sudoku 9 yang berkelanjutan setelah perubahan dipublikasikan merupakan penerimaan Anda atas kebijakan yang diperbarui."] },
+                contact: { heading: "Hubungi Kami", pre: "Untuk pertanyaan atau permintaan terkait Kebijakan Privasi ini:", sub: "Hexlume Games &nbsp;·&nbsp; Pengembang game independen" }
+            },
+
+            /* ── TIẾNG VIỆT ── */
+            vi: {
+                label: "🇻🇳 Tiếng Việt", dir: "ltr", title: "Chính sách Quyền riêng tư",
+                overview: { badge: "Tổng quan", text: ["Hexlume Games ('chúng tôi') đã phát triển <strong>Sudoku 9</strong> như một ứng dụng di động miễn phí. Chính sách Quyền riêng tư này giải thích thông tin chúng tôi thu thập, cách sử dụng và các lựa chọn của bạn.", "Bằng cách tải xuống hoặc sử dụng Sudoku 9, bạn đồng ý với chính sách này. Nếu không đồng ý, hãy ngừng sử dụng ứng dụng."] },
+                collection: { heading: "Thông Tin Chúng Tôi Thu Thập", intro: "Chúng tôi thu thập các loại thông tin sau:", items: ["<strong>Dữ liệu thiết bị và kỹ thuật:</strong> Mẫu thiết bị, phiên bản hệ điều hành, phiên bản ứng dụng, ngôn ngữ và vị trí chung (quốc gia/khu vực). Thu thập tự động qua các đối tác quảng cáo và phân tích của chúng tôi.", "<strong>Dữ liệu sử dụng:</strong> Các phiên chơi, mức độ khó được chọn và tương tác tính năng — chỉ để cải thiện trải nghiệm chơi game.", "<strong>Mã nhận dạng quảng cáo:</strong> Với sự đồng ý của bạn, Google AdMob có thể thu thập mã nhận dạng quảng cáo để hiển thị quảng cáo được cá nhân hóa.", "<strong>Tiến trình trò chơi (chỉ cục bộ):</strong> Tiến trình, thống kê và cài đặt của bạn chỉ được lưu trên thiết bị qua <code>localStorage</code>. Chúng tôi không truyền dữ liệu này đến bất kỳ máy chủ nào."], outro: "Chúng tôi <strong>không</strong> thu thập tên, địa chỉ email, số điện thoại, vị trí GPS chính xác hoặc bất kỳ thông tin nhận dạng cá nhân nào khác." },
+                usage: { heading: "Cách Chúng Tôi Sử Dụng Thông Tin", items: ["Hiển thị quảng cáo qua Google AdMob (quảng cáo banner, quảng cáo xen kẽ và video có thưởng).", "Giám sát độ ổn định của ứng dụng và chẩn đoán sự cố kỹ thuật qua báo cáo sự cố.", "Phân tích các mẫu chơi game tổng hợp để cải thiện tính năng trong tương lai.", "Tuân thủ các nghĩa vụ pháp lý."] },
+                advertising: { heading: "Quảng Cáo &amp; Google AdMob", text: ["Sudoku 9 sử dụng <strong>Google AdMob</strong> để hiển thị quảng cáo. AdMob có thể thu thập và xử lý dữ liệu theo Chính sách Quyền riêng tư và Điều khoản Dịch vụ của riêng Google.", "Khi khởi chạy lần đầu, bạn sẽ được yêu cầu đồng ý hoặc từ chối <strong>quảng cáo được cá nhân hóa</strong>. Nếu từ chối, quảng cáo không được cá nhân hóa (theo ngữ cảnh) sẽ được hiển thị. Bạn có thể thay đổi tùy chọn bất kỳ lúc nào trong <strong>Cài đặt → Quyền riêng tư</strong>."], links: [{ label: "Chính sách Quyền riêng tư của Google", url: "https://policies.google.com/privacy" }, { label: "Từ chối quảng cáo cá nhân hóa", url: "https://adssettings.google.com" }], noSell: "Chúng tôi không bán dữ liệu cá nhân của bạn cho bất kỳ bên thứ ba nào." },
+                sharing: { heading: "Chia Sẻ Dữ Liệu &amp; Bên Thứ Ba", intro: "Chúng tôi không bán, trao đổi hoặc cho thuê thông tin cá nhân của bạn. Dữ liệu tổng hợp hạn chế có thể được chia sẻ với:", items: ["<strong>Google AdMob</strong> — để phân phối và đo lường quảng cáo.", "<strong>Cơ quan pháp lý</strong> — khi cần thiết để tuân thủ luật pháp hiện hành, lệnh tòa án hoặc quy định của chính phủ."], note: "Tất cả các dịch vụ bên thứ ba đều có chính sách quyền riêng tư riêng điều chỉnh việc sử dụng dữ liệu của bạn." },
+                children: { heading: "Quyền Riêng Tư Của Trẻ Em", text: ["Sudoku 9 không dành cho trẻ em dưới <strong>13 tuổi</strong>. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em.", "Nếu bạn là phụ huynh hoặc người giám hộ và tin rằng con bạn đã cung cấp dữ liệu cá nhân cho chúng tôi, vui lòng liên hệ theo địa chỉ bên dưới — chúng tôi sẽ xóa thông tin đó ngay lập tức.", "Ứng dụng không sử dụng cài đặt quảng cáo hướng đến trẻ em (COPPA) và không được gửi là ứng dụng 'Được thiết kế cho gia đình'."] },
+                rights: { heading: "Quyền Của Bạn (GDPR &amp; Quyền riêng tư Hoa Kỳ)", intro: "Tùy thuộc vào vị trí của bạn, bạn có thể có các quyền sau:", items: ["<strong>Truy cập:</strong> Yêu cầu bản sao dữ liệu cá nhân chúng tôi đang lưu giữ về bạn.", "<strong>Chỉnh sửa:</strong> Yêu cầu chỉnh sửa dữ liệu không chính xác.", "<strong>Xóa:</strong> Yêu cầu xóa dữ liệu cá nhân của bạn.", "<strong>Hạn chế:</strong> Yêu cầu chúng tôi hạn chế cách sử dụng dữ liệu của bạn.", "<strong>Tính di động:</strong> Nhận dữ liệu của bạn ở định dạng có cấu trúc, có thể đọc bằng máy.", "<strong>Phản đối:</strong> Phản đối việc xử lý dựa trên lợi ích hợp pháp.", "<strong>Rút lại sự đồng ý:</strong> Rút lại sự đồng ý quảng cáo của bạn bất kỳ lúc nào trong ứng dụng."], legal: "Đối với người dùng EU/EEA, cơ sở pháp lý để xử lý dữ liệu quảng cáo là <strong>sự đồng ý rõ ràng</strong> của bạn thu được qua màn hình đồng ý trong ứng dụng. Người dùng tại các bang Hoa Kỳ có luật bảo mật áp dụng (CCPA/CPRA, CDPA, CPA, v.v.) có thể từ chối bán hoặc chia sẻ thông tin cá nhân bất kỳ lúc nào qua cài đặt đồng ý trong ứng dụng. Liên hệ chúng tôi để thực hiện những quyền này." },
+                security: { heading: "Bảo Mật", text: ["Chúng tôi triển khai các biện pháp kỹ thuật và tổ chức hợp lý để bảo vệ dữ liệu hạn chế mà chúng tôi xử lý. Tuy nhiên, không có phương pháp truyền tải qua internet hoặc lưu trữ điện tử nào an toàn 100%, và chúng tôi không thể đảm bảo bảo mật tuyệt đối."] },
+                changes: { heading: "Thay Đổi Chính Sách Này", text: ["Chúng tôi có thể cập nhật Chính sách Quyền riêng tư này theo thời gian. Ngày 'Cập nhật lần cuối' sẽ được sửa đổi theo đó. Chúng tôi khuyến khích bạn xem xét chính sách này định kỳ.", "Việc tiếp tục sử dụng Sudoku 9 sau khi thay đổi được đăng tải đồng nghĩa với việc bạn chấp nhận chính sách đã cập nhật."] },
+                contact: { heading: "Liên Hệ Chúng Tôi", pre: "Nếu bạn có câu hỏi hoặc yêu cầu liên quan đến Chính sách Quyền riêng tư này:", sub: "Hexlume Games &nbsp;·&nbsp; Nhà phát triển game độc lập" }
+            },
+
+            /* ── ภาษาไทย ── */
+            th: {
+                label: "🇹🇭 ภาษาไทย", dir: "ltr", title: "นโยบายความเป็นส่วนตัว",
+                overview: { badge: "ภาพรวม", text: ["Hexlume Games ('เรา') ได้พัฒนา <strong>Sudoku 9</strong> ในฐานะแอปพลิเคชันมือถือที่เล่นฟรี นโยบายความเป็นส่วนตัวนี้อธิบายถึงข้อมูลที่เรารวบรวม วิธีการใช้งาน และตัวเลือกที่คุณมี", "การดาวน์โหลดหรือใช้งาน Sudoku 9 ถือว่าคุณยินยอมต่อนโยบายนี้ หากคุณไม่เห็นด้วย กรุณาหยุดใช้งานแอป"] },
+                collection: { heading: "ข้อมูลที่เราเก็บรวบรวม", intro: "เราเก็บรวบรวมข้อมูลประเภทต่อไปนี้:", items: ["<strong>ข้อมูลอุปกรณ์และเทคนิค:</strong> รุ่นอุปกรณ์ เวอร์ชัน OS เวอร์ชันแอป ภาษา และตำแหน่งทั่วไป (ประเทศ/ภูมิภาค) เก็บรวบรวมโดยอัตโนมัติผ่านพันธมิตรด้านโฆษณาและการวิเคราะห์ของเรา", "<strong>ข้อมูลการใช้งาน:</strong> เซสชันที่เล่น ระดับความยากที่เลือก และการโต้ตอบกับฟีเจอร์ต่างๆ — เพื่อปรับปรุงประสบการณ์การเล่นเกมเท่านั้น", "<strong>ตัวระบุโฆษณา:</strong> ด้วยความยินยอมของคุณ Google AdMob อาจเก็บรวบรวมตัวระบุโฆษณาเพื่อแสดงโฆษณาส่วนบุคคล", "<strong>ความคืบหน้าในเกม (เฉพาะในเครื่อง):</strong> ความคืบหน้า สถิติ และการตั้งค่าของคุณจะถูกเก็บไว้เฉพาะในอุปกรณ์ของคุณผ่าน <code>localStorage</code> เราไม่ส่งข้อมูลนี้ไปยังเซิร์ฟเวอร์ใดๆ"], outro: "เรา<strong>ไม่</strong>เก็บรวบรวมชื่อ อีเมล หมายเลขโทรศัพท์ ตำแหน่ง GPS ที่แม่นยำ หรือข้อมูลระบุตัวตนส่วนบุคคลอื่นใดโดยตรง" },
+                usage: { heading: "วิธีที่เราใช้ข้อมูล", items: ["แสดงโฆษณาผ่าน Google AdMob (โฆษณาแบนเนอร์ โฆษณาคั่นระหว่างหน้า และวิดีโอโฆษณาแบบมีรางวัล)", "ตรวจสอบความเสถียรของแอปและวินิจฉัยปัญหาทางเทคนิคผ่านรายงานข้อขัดข้อง", "วิเคราะห์รูปแบบการเล่นเกมโดยรวมเพื่อปรับปรุงฟีเจอร์เกมในอนาคต", "ปฏิบัติตามภาระผูกพันทางกฎหมาย"] },
+                advertising: { heading: "โฆษณาและ Google AdMob", text: ["Sudoku 9 ใช้ <strong>Google AdMob</strong> เพื่อแสดงโฆษณา AdMob อาจเก็บรวบรวมและประมวลผลข้อมูลตามนโยบายความเป็นส่วนตัวและข้อกำหนดในการให้บริการของ Google เอง", "เมื่อเปิดแอปครั้งแรก คุณจะถูกขอให้ยินยอมหรือปฏิเสธ<strong>โฆษณาส่วนบุคคล</strong> หากปฏิเสธ จะแสดงโฆษณาที่ไม่ได้ปรับแต่งส่วนบุคคล (ตามบริบท) แทน คุณสามารถเปลี่ยนการตั้งค่าได้ตลอดเวลาใน <strong>การตั้งค่า → ความเป็นส่วนตัว</strong>"], links: [{ label: "นโยบายความเป็นส่วนตัวของ Google", url: "https://policies.google.com/privacy" }, { label: "ยกเลิกโฆษณาส่วนบุคคล", url: "https://adssettings.google.com" }], noSell: "เราไม่ขายข้อมูลส่วนบุคคลของคุณให้แก่บุคคลที่สาม" },
+                sharing: { heading: "การแบ่งปันข้อมูลและบุคคลที่สาม", intro: "เราไม่ขาย แลกเปลี่ยน หรือให้เช่าข้อมูลส่วนบุคคลของคุณ ข้อมูลที่รวบรวมและจำกัดอาจถูกแบ่งปันกับ:", items: ["<strong>Google AdMob</strong> — สำหรับการแสดงและวัดผลโฆษณา", "<strong>หน่วยงานทางกฎหมาย</strong> — เมื่อจำเป็นต้องปฏิบัติตามกฎหมายที่บังคับใช้ คำสั่งศาล หรือข้อบังคับของรัฐบาล"], note: "บริการของบุคคลที่สามทั้งหมดมีนโยบายความเป็นส่วนตัวของตนเองที่ควบคุมการใช้ข้อมูลของคุณ" },
+                children: { heading: "ความเป็นส่วนตัวของเด็ก", text: ["Sudoku 9 ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า <strong>13 ปี</strong> เราไม่ได้เก็บรวบรวมข้อมูลส่วนบุคคลจากเด็กโดยตั้งใจ", "หากคุณเป็นผู้ปกครองหรือผู้ดูแลและเชื่อว่าบุตรหลานของคุณให้ข้อมูลส่วนบุคคลแก่เรา โปรดติดต่อเราที่ที่อยู่ด้านล่าง — เราจะลบข้อมูลนั้นทันที", "แอปไม่ใช้การตั้งค่าโฆษณาสำหรับเด็ก (COPPA) และไม่ได้ส่งเป็นแอปที่ 'ออกแบบมาสำหรับครอบครัว'"] },
+                rights: { heading: "สิทธิ์ของคุณ (GDPR และความเป็นส่วนตัวของรัฐในสหรัฐอเมริกา)", intro: "ขึ้นอยู่กับตำแหน่งของคุณ คุณอาจมีสิทธิ์ดังต่อไปนี้:", items: ["<strong>การเข้าถึง:</strong> ขอสำเนาข้อมูลส่วนบุคคลที่เราถือครองเกี่ยวกับคุณ", "<strong>การแก้ไข:</strong> ขอแก้ไขข้อมูลที่ไม่ถูกต้อง", "<strong>การลบ:</strong> ขอลบข้อมูลส่วนบุคคลของคุณ", "<strong>การจำกัด:</strong> ขอให้เราจำกัดวิธีการใช้ข้อมูลของคุณ", "<strong>การพกพา:</strong> รับข้อมูลของคุณในรูปแบบที่มีโครงสร้างซึ่งเครื่องอ่านได้", "<strong>การคัดค้าน:</strong> คัดค้านการประมวลผลตามผลประโยชน์ที่ชอบธรรม", "<strong>ถอนความยินยอม:</strong> ถอนความยินยอมโฆษณาของคุณได้ตลอดเวลาในแอป"], legal: "สำหรับผู้ใช้ EU/EEA พื้นฐานทางกฎหมายของเราในการประมวลผลข้อมูลโฆษณาคือ<strong>ความยินยอมที่ชัดเจน</strong>ของคุณที่ได้รับผ่านหน้าจอความยินยอมในแอป ผู้ใช้ในรัฐสหรัฐอเมริกาที่มีกฎหมายความเป็นส่วนตัวที่บังคับใช้ (CCPA/CPRA, CDPA, CPA ฯลฯ) สามารถเลือกไม่รับการขายหรือแบ่งปันข้อมูลส่วนบุคคลได้ตลอดเวลาผ่านการตั้งค่าความยินยอมในแอป ติดต่อเราเพื่อใช้สิทธิ์เหล่านี้" },
+                security: { heading: "ความปลอดภัย", text: ["เราดำเนินมาตรการทางเทคนิคและองค์กรที่เหมาะสมเพื่อปกป้องข้อมูลที่จำกัดที่เราประมวลผล อย่างไรก็ตาม ไม่มีวิธีการส่งข้อมูลทางอินเทอร์เน็ตหรือการจัดเก็บข้อมูลอิเล็กทรอนิกส์ที่ปลอดภัย 100% และเราไม่สามารถรับประกันความปลอดภัยอย่างแน่นอนได้"] },
+                changes: { heading: "การเปลี่ยนแปลงนโยบายนี้", text: ["เราอาจอัปเดตนโยบายความเป็นส่วนตัวนี้เป็นครั้งคราว วันที่ 'อัปเดตล่าสุด' จะได้รับการแก้ไขตามนั้น เราขอแนะนำให้คุณตรวจสอบนโยบายนี้เป็นระยะ", "การใช้งาน Sudoku 9 ต่อไปหลังจากมีการเผยแพร่การเปลี่ยนแปลงถือเป็นการยอมรับนโยบายที่อัปเดต"] },
+                contact: { heading: "ติดต่อเรา", pre: "หากคุณมีคำถามหรือคำขอใดๆ เกี่ยวกับนโยบายความเป็นส่วนตัวนี้ โปรดติดต่อ:", sub: "Hexlume Games &nbsp;·&nbsp; นักพัฒนาเกมอิสระ" }
+            }
+
+        }; /* END LANGS */
+
+        /* ══════════════════════════════════════
+           RENDERER — identical template for all languages
+        ══════════════════════════════════════ */
+        function sec(html) {
+            const d = document.createElement('section');
+            d.className = 'pp-section';
+            d.innerHTML = html;
+            return d;
+        }
+
+        function render(code) {
+            const L = LANGS[code];
+            if (!L) return;
+            document.documentElement.lang = code;
+            document.documentElement.dir = L.dir;
+            document.getElementById('pp-title').textContent = L.title;
+            document.title = L.title + ' – Sudoku 9';
+            const main = document.getElementById('pp-main');
+            main.innerHTML = '';
+
+            /* 1 overview */
+            main.appendChild(sec(
+                `<div class="badge">${L.overview.badge}</div>` +
+                L.overview.text.map(t => `<p>${t}</p>`).join('')
+            ));
+
+            /* 2 collection */
+            main.appendChild(sec(
+                `<h2>${L.collection.heading}</h2>` +
+                `<p>${L.collection.intro}</p>` +
+                `<ul>${L.collection.items.map(i => `<li>${i}</li>`).join('')}</ul>` +
+                `<p>${L.collection.outro}</p>`
+            ));
+
+            /* 3 usage */
+            main.appendChild(sec(
+                `<h2>${L.usage.heading}</h2>` +
+                `<ul>${L.usage.items.map(i => `<li>${i}</li>`).join('')}</ul>`
+            ));
+
+            /* 4 advertising */
+            main.appendChild(sec(
+                `<h2>${L.advertising.heading}</h2>` +
+                L.advertising.text.map(t => `<p>${t}</p>`).join('') +
+                `<ul>${L.advertising.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join('')}</ul>` +
+                `<p>${L.advertising.noSell}</p>`
+            ));
+
+            /* 5 sharing */
+            main.appendChild(sec(
+                `<h2>${L.sharing.heading}</h2>` +
+                `<p>${L.sharing.intro}</p>` +
+                `<ul>${L.sharing.items.map(i => `<li>${i}</li>`).join('')}</ul>` +
+                `<p>${L.sharing.note}</p>`
+            ));
+
+            /* 6 children */
+            main.appendChild(sec(
+                `<h2>${L.children.heading}</h2>` +
+                L.children.text.map(t => `<p>${t}</p>`).join('')
+            ));
+
+            /* 7 rights */
+            main.appendChild(sec(
+                `<h2>${L.rights.heading}</h2>` +
+                `<p>${L.rights.intro}</p>` +
+                `<ul>${L.rights.items.map(i => `<li>${i}</li>`).join('')}</ul>` +
+                `<p>${L.rights.legal}</p>`
+            ));
+
+            /* 8 security */
+            main.appendChild(sec(
+                `<h2>${L.security.heading}</h2>` +
+                L.security.text.map(t => `<p>${t}</p>`).join('')
+            ));
+
+            /* 9 changes */
+            main.appendChild(sec(
+                `<h2>${L.changes.heading}</h2>` +
+                L.changes.text.map(t => `<p>${t}</p>`).join('')
+            ));
+
+            /* 10 contact */
+            const cb = document.createElement('div');
+            cb.className = 'contact-box';
+            cb.innerHTML =
+                `<h2>${L.contact.heading}</h2>` +
+                `<p>${L.contact.pre}</p>` +
+                `<p class="contact-email">hexlumegames@gmail.com</p>` +
+                `<p class="contact-sub">${L.contact.sub}<br/>` +
+                `<a href="${STORE_URL}" target="_blank" rel="noopener">Google Play Store</a></p>`;
+            main.appendChild(cb);
+        }
+
+        /* ── Build lang bar ── */
+        let active = 'en';
+        (function () {
+            const bar = document.getElementById('lang-bar');
+            Object.keys(LANGS).forEach(code => {
+                const b = document.createElement('button');
+                b.className = 'lang-btn';
+                b.dataset.lang = code;
+                b.textContent = LANGS[code].label;
+                b.onclick = () => {
+                    document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+                    b.classList.add('active');
+                    render(code);
+                    active = code;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+                bar.appendChild(b);
+            });
+            /* auto-detect */
+            const browser = (navigator.language || '').toLowerCase().split('-')[0];
+            const target = LANGS[browser] ? browser : 'en';
+            document.querySelector(`[data-lang="${target}"]`).classList.add('active');
+            render(target);
+            active = target;
+        })();
+    </script>
 </body>
 
 </html>
